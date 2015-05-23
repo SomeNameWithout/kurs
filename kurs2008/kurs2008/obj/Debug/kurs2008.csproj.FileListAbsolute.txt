@@ -1,0 +1,9 @@
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\kurs2008.exe
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\kurs2008.pdb
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\System.Data.SQLite.dll
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\ResolveAssemblyReference.cache
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.Form1.resources
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.Properties.Resources.resources
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.csproj.GenerateResource.Cache
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.exe
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.pdb
