@@ -7,6 +7,6 @@ namespace kurs2008
 {
     class Settings
     {
-        public string s;
+        public string DBPath = "database.sqlite";
     }
 }

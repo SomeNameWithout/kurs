@@ -22,9 +22,9 @@ namespace kurs2008
         public string Name;
         public bool State;
         public int TaskType_ID;
-        public int Volume;
-        public string Limitation_date;
-        public string Completion_date;
+        public int Volume;//объём работы в чел/час
+        public string Limitation_date;//срок сдачи задания
+        public string Completion_date;//фактическая дата выполнения задачи
         public int Proj_ID;
         public int Empl_ID;
     }
@@ -43,6 +43,7 @@ namespace kurs2008
     }
     class SalaryCalculationVariables
     {
+        public int ID;
+        public int Volume;
     }
-
 }
