@@ -44,9 +44,9 @@ namespace kurs2008
 
                 sqlCom = new SQLiteCommand("create table Wages"
                 + "(id INTEGER PRIMARY KEY, "
+                + "empl_id INTEGER, "
                 + "date TEXT, "
-                + "value INTEGER, "
-                + "empl_id INTEGER)", sqlCon);
+                + "value INTEGER)", sqlCon);
                 sqlCom.ExecuteNonQuery();
 
                 sqlCom = new SQLiteCommand("create table TaskTypes"
@@ -71,16 +71,17 @@ namespace kurs2008
             void EditConfirm();
         }
 
-        public class Employee : IDBRelation
+        public static class Employee : IDBRelation
         {
+            //public static bool b;
             private int tempID=-1;
             public int TempID
             { get { return tempID; } }
             public string tempName = "";
-            public void Add(string s)
+            public void Add(string name)
             {
                 sqlCom = new SQLiteCommand("INSERT INTO Employees(name) "
-                + "VALUES ('" + s + "');", sqlCon);
+                + "VALUES ('" + name + "');", sqlCon);
 
                 sqlCon.Open();
                 sqlCom.ExecuteNonQuery();
@@ -117,40 +118,269 @@ namespace kurs2008
                 sqlCon.Close();
             }
         }
-        public class Project
+        public static class Project: IDBRelation
         {
-            public int ID;
-            public string Name;
+            private int tempID = -1;
+            public int TempID
+            { get { return tempID; } }
+            public string tempName = "";
+            public void Add(string name)
+            {
+                sqlCom = new SQLiteCommand("INSERT INTO Projects(name) "
+                + "VALUES ('" + name + "');", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+            public void Delete(int i)
+            {
+                sqlCom = new SQLiteCommand("DELETE FROM Projects"
+                + "WHERE id=" + i + ";", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+            public void EditStart(int i)
+            {
+                sqlCom = new SQLiteCommand("SELECT id, name "
+                + "FROM Projects "
+                + "WHERE id=" + i.ToString() + ";", sqlCon);
+                SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
+                sqlReader.Read();
+                tempID = (int)sqlReader["id"];
+                tempName = sqlReader["name"].ToString();
+                sqlReader.Close();
+            }
+            public void EditConfirm()
+            {
+                sqlCom = new SQLiteCommand("UPDATE Projects "
+                + "SET name = " + tempName + " "
+                + "WHERE id=" + tempID + ";", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
         }
-        public class Task
+        public static class Task: IDBRelation
         {
-            public int ID;
-            public string Name;
-            public bool State;
-            public int TaskType_ID;
-            public int Volume;//объём работы в чел/час
-            public string Limitation_date;//срок сдачи задания
-            public string Completion_date;//фактическая дата выполнения задачи
-            public int Proj_ID;
-            public int Empl_ID;
+            private int tempID = -1;
+            public int TempID
+            { get { return tempID; } }
+            public string tempName = "";
+            public bool tempState = false;
+            public int tempTaskType_ID = -1;
+            public int tempVolume;//объём работы в чел/час
+            public string tempLimitation_date = "";//срок сдачи задания
+            public string tempCompletion_date = "";//фактическая дата выполнения задачи
+            public int tempProj_ID = -1;
+            public int tempEmpl_ID = -1;
+            public void Add(string name, bool state, int taskType, int volume, string LDate, string CDate,int Proj_ID, int Empl_ID)
+            {
+                sqlCom = new SQLiteCommand("INSERT INTO Tasks(name, state , "
+                + "taskType_id, volume, limitation_date, completion_date , "
+                + "proj_id , empl_id)"
+                + "VALUES ('" + name + state + taskType + volume + LDate + CDate + Proj_ID + Empl_ID + "');", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+            public void Delete(int i)
+            {
+                sqlCom = new SQLiteCommand("DELETE FROM Tasks"
+                + "WHERE id=" + i + ";", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+            public void EditStart(int i)
+            {
+                sqlCom = new SQLiteCommand("SELECT name, state , "
+                + "taskType_id, volume, limitation_date, completion_date , "
+                + "proj_id , empl_id"
+                + "FROM Tasks "
+                + "WHERE id=" + i.ToString() + ";", sqlCon);
+                SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
+                sqlReader.Read();
+                tempID = (int)sqlReader["id"];
+                tempName = sqlReader["name"].ToString();
+                tempState = (bool)sqlReader["state"];
+                tempTaskType_ID = (int)sqlReader["taskType_id"];
+                tempVolume = (int)sqlReader["volume"];
+                tempLimitation_date = sqlReader["limitation_date"].ToString();
+                tempCompletion_date = sqlReader["completion_date"].ToString();
+                tempProj_ID = (int)sqlReader["proj_id"];
+                tempEmpl_ID = (int)sqlReader["empl_id"];
+                sqlReader.Close();
+            }
+            public void EditConfirm()
+            {
+                sqlCom = new SQLiteCommand("UPDATE Tasks "
+                + "SET name = " + tempName + " "
+                + "SET state = " + tempState + " "
+                + "SET taskType_id = " + tempTaskType_ID + " "
+                + "SET volume = " + tempVolume + " "
+                + "SET limitation_date = " + tempLimitation_date + " "
+                + "SET completion_date = " + tempCompletion_date + " "
+                + "SET proj_id = " + tempProj_ID + " "
+                + "SET empl_id = " + tempEmpl_ID + " "
+                + "WHERE id=" + tempID + ";", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
         }
-        public class Salary
+        public static class Wage : IDBRelation
         {
-            public int ID;
-            public int Empl_ID;
-            public int Date;
-            public int Volume;
+            private int tempID = -1;
+            public int TempID
+            { get { return tempID; } }
+            public int tempEmpl_ID=-1;
+            public string tempDate="";
+            public int tempVolume=-1;
+            public void Add(int Empl_ID, string Date, int Volume)
+            {
+                sqlCom = new SQLiteCommand("INSERT INTO Wages(empl_id, date, value) "
+                + "VALUES ('" + Empl_ID + Date + Volume + "');", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+            public void Delete(int i)
+            {
+                sqlCom = new SQLiteCommand("DELETE FROM Wages"
+                + "WHERE id=" + i + ";", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+            public void EditStart(int i)
+            {
+                sqlCom = new SQLiteCommand("SELECT id, empl_id, date, value "
+                + "FROM Wages "
+                + "WHERE id=" + i.ToString() + ";", sqlCon);
+                SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
+                sqlReader.Read();
+                tempID = (int)sqlReader["id"];
+                tempEmpl_ID = (int)sqlReader["empl_id"];
+                tempDate = sqlReader["date"].ToString();
+                tempVolume = (int)sqlReader["value"];
+                sqlReader.Close();
+            }
+            public void EditConfirm()
+            {
+                sqlCom = new SQLiteCommand("UPDATE Wages "
+                + "SET empl_id = " + tempEmpl_ID + " "
+                + "SET date = " + tempDate + " "
+                + "SET value = " + tempVolume + " "
+                + "WHERE id=" + tempID + ";", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
         }
-        public class TaskType
+        public static class TaskType : IDBRelation
         {
-            public int ID;
-            public int Speed;//нормативная скорость выполнения
-            public int Complexity;//коэффициент сложности
+            private int tempID = -1;
+            public int TempID
+            { get { return tempID; } }
+            public int tempSpeed = -1;//нормативная скорость выполнения
+            public int tempComplexity = -1;//коэффициент сложности
+            public void Add(int Speed, int Complexity)
+            {
+                sqlCom = new SQLiteCommand("INSERT INTO TaskTypes(speed, complexity) "
+                + "VALUES ('" + Speed + Complexity + "');", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+            public void Delete(int i)
+            {
+                sqlCom = new SQLiteCommand("DELETE FROM TaskTypes"
+                + "WHERE id=" + i + ";", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+            public void EditStart(int i)
+            {
+                sqlCom = new SQLiteCommand("SELECT id, speed, complexity "
+                + "FROM TaskTypes "
+                + "WHERE id=" + i.ToString() + ";", sqlCon);
+                SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
+                sqlReader.Read();
+                tempID = (int)sqlReader["id"];
+                tempSpeed = (int)sqlReader["speed"];
+                tempComplexity = (int)sqlReader["complexity"];
+                sqlReader.Close();
+            }
+            public void EditConfirm()
+            {
+                sqlCom = new SQLiteCommand("UPDATE TaskTypes "
+                + "SET speed = " + tempSpeed + " "
+                + "SET complexity = " + tempComplexity + " "
+                + "WHERE id=" + tempID + ";", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
         }
-        public class SalaryCalculationVariables
+        public static class WageCalculationVariable : IDBRelation
         {
-            public int ID;
-            public int Volume;
+            private int tempID = -1;
+            public int TempID
+            { get { return tempID; } }
+            public int tempVolume;
+            public void Add(int Volume)
+            {
+                sqlCom = new SQLiteCommand("INSERT INTO WageCalculationVariables(value) "
+                + "VALUES ('" + Volume + "');", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+            public void Delete(int i)
+            {
+                sqlCom = new SQLiteCommand("DELETE FROM WageCalculationVariables"
+                + "WHERE id=" + i + ";", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+            public void EditStart(int i)
+            {
+                sqlCom = new SQLiteCommand("SELECT id, value "
+                + "FROM WageCalculationVariables "
+                + "WHERE id=" + i.ToString() + ";", sqlCon);
+                SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
+                sqlReader.Read();
+                tempID = (int)sqlReader["id"];
+                tempVolume = (int)sqlReader["value"];
+                sqlReader.Close();
+            }
+            public void EditConfirm()
+            {
+                sqlCom = new SQLiteCommand("UPDATE WageCalculationVariables "
+                + "SET value = " + tempVolume + " "
+                + "WHERE id=" + tempID + ";", sqlCon);
+
+                sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+            }
         }
     }
 }
