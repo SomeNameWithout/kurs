@@ -13,8 +13,9 @@ namespace kurs2008
 {
     public partial class FormMain : Form
     {
-        Settings CurrentSettings = new Settings();
         SQLiteCommand sqlCom;
+        DBModule DB;
+
         public FormMain()
         {
             InitializeComponent();
@@ -24,50 +25,7 @@ namespace kurs2008
         {
             try
             {
-                if (!File.Exists(CurrentSettings.DBPath))
-                {
-                    SQLiteConnection.CreateFile(CurrentSettings.DBPath);
-                    SQLiteConnection sqlConCreateDB = new SQLiteConnection(@"Data Source=" + CurrentSettings.DBPath + ";Version=3;");
-                    sqlConCreateDB.Open();
-
-                    sqlCom = new SQLiteCommand("create table Employees"
-                    + "(id INTEGER PRIMARY KEY, "
-                    + "name TEXT, burden INTEGER)", sqlConCreateDB);
-                    sqlCom.ExecuteNonQuery();
-
-                    sqlCom = new SQLiteCommand("create table Projects"
-                    + "(id INTEGER PRIMARY KEY, "
-                    + "name TEXT)", sqlConCreateDB);
-                    sqlCom.ExecuteNonQuery();
-
-                    sqlCom = new SQLiteCommand("create table Tasks"
-                    + "(id INTEGER PRIMARY KEY, "
-                    + "name TEXT, state BOOLEAN, "
-                    + "taskType_id INTEGER, "
-                    + "volume INTEGER, limitation_date TEXT, "
-                    + "completion_date TEXT, proj_id INTEGER, "
-                    + "empl_id INTEGER)", sqlConCreateDB);
-                    sqlCom.ExecuteNonQuery();
-
-                    sqlCom = new SQLiteCommand("create table Wages"
-                    + "(id INTEGER PRIMARY KEY, "
-                    + "value INTEGER, "
-                    + "empl_id INTEGER)", sqlConCreateDB);
-                    sqlCom.ExecuteNonQuery();
-
-                    sqlCom = new SQLiteCommand("create table TaskTypes"
-                    + "(id INTEGER PRIMARY KEY, "
-                    + "speed INTEGER, "
-                    + "complexity INTEGER)", sqlConCreateDB);
-                    sqlCom.ExecuteNonQuery();
-
-                    sqlCom = new SQLiteCommand("create table WageCalculationVariables"
-                    + "(id INTEGER PRIMARY KEY, "
-                    + "value INTEGER)", sqlConCreateDB);
-                    sqlCom.ExecuteNonQuery();
-
-                    sqlConCreateDB.Close();
-                }
+                DB = new DBModule();
                 List<string> TablesNames = new List<string>();
                 TablesNames.AddRange(new string[] { "Employees", "Projects", "Tasks", "Wages", "Task types", "Wage calculation variables" });
                 comboBoxTableChoice.DataSource = TablesNames;
@@ -93,10 +51,8 @@ namespace kurs2008
 
         private void comboBoxTableChoice_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SQLiteConnection sqlCon = new SQLiteConnection(@"Data Source=" + CurrentSettings.DBPath + ";Version=3;");
-            sqlCon.Open();
-
-            sqlCom = new SQLiteCommand(sqlCon);
+            DBModule.sqlCon.Open();
+            sqlCom = new SQLiteCommand(DBModule.sqlCon);
             Dictionary<string, string> ComboboxTablesNamesDictionary = new Dictionary<string, string>();
             ComboboxTablesNamesDictionary.Add("Employees", "Employees");
             ComboboxTablesNamesDictionary.Add("Projects", "Projects");
@@ -113,7 +69,7 @@ namespace kurs2008
             dataGridViewMain.DataSource = dt;
 
             sdr.Close();
-            sqlCon.Close();
+            DBModule.sqlCon.Close();
         }
 
     }

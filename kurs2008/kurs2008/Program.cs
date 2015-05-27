@@ -5,6 +5,10 @@ using System.Windows.Forms;
 
 namespace kurs2008
 {
+    static class Settings
+    {
+        public static string DBPath = "database.sqlite";
+    }
     static class Program
     {
         /// <summary>

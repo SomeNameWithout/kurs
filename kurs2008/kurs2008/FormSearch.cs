@@ -15,5 +15,19 @@ namespace kurs2008
         {
             InitializeComponent();
         }
+
+        private void FormSearch_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                List<string> TablesNames = new List<string>();
+                TablesNames.AddRange(new string[] { "Employees", "Projects", "Tasks", "Wages", "Task types", "Wage calculation variables" });
+                comboBoxColumnChoice.DataSource = TablesNames;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
