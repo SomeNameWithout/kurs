@@ -26,7 +26,7 @@ namespace kurs2008
             {
                 DB = new DBModule();
                 List<string> TablesNames = new List<string>();
-                TablesNames.AddRange(new string[] { "Employees", "Projects", "Tasks", "Wages", "Task types", "Wage calculation variables" });
+                TablesNames.AddRange(new string[] { "Employees", "Projects", "Tasks", "Wages", "Task types" });
                 comboBoxTableChoice.DataSource = TablesNames;
             }
             catch (Exception ex)
@@ -49,7 +49,6 @@ namespace kurs2008
             ComboboxTablesNamesDictionary.Add("Tasks", "Tasks");
             ComboboxTablesNamesDictionary.Add("Wages", "Wages");
             ComboboxTablesNamesDictionary.Add("Task types", "TaskTypes");
-            ComboboxTablesNamesDictionary.Add("Wage calculation variables", "WageCalculationVariables");
 
             dataGridViewMain.DataSource = DBModule.QuerySelection(@"SELECT * FROM " + ComboboxTablesNamesDictionary[(string)comboBoxTableChoice.SelectedItem] + ";");
 
@@ -77,9 +76,6 @@ namespace kurs2008
                             break;
                         case "Task types":
                             DBModule.TaskType.Add(10,1);
-                            break;
-                        case "Wage calculation variables":
-                            DBModule.WageCalculationVariable.Add(20);
                             break;
                     }
                     if (comboBoxTableChoice.SelectedIndex < 5)

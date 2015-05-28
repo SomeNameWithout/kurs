@@ -21,44 +21,54 @@ namespace kurs2008
                 sqlCon.Open();
 
                 sqlCom = new SQLiteCommand("create table Employees"
-                + "(id INTEGER PRIMARY KEY, "
-                + "name TEXT, "
-                + "burden INTEGER)", sqlCon);
+                + "(id      INTEGER, "
+                + "name     TEXT, "
+                + "burden   INTEGER, "
+                + "CONSTRAINT EmployeesPK PRIMARY KEY (id))", sqlCon);
                 sqlCom.ExecuteNonQuery();
 
                 sqlCom = new SQLiteCommand("create table Projects"
-                + "(id INTEGER PRIMARY KEY, "
-                + "name TEXT)", sqlCon);
-                sqlCom.ExecuteNonQuery();
-
-                sqlCom = new SQLiteCommand("create table Tasks"
-                + "(id INTEGER PRIMARY KEY, "
+                + "(id  INTEGER, "
                 + "name TEXT, "
-                + "state BOOLEAN, "
-                + "taskType_id INTEGER, "
-                + "volume INTEGER, "
-                + "limitation_date TEXT, "
-                + "completion_date TEXT, "
-                + "proj_id INTEGER, "
-                + "empl_id INTEGER)", sqlCon);
-                sqlCom.ExecuteNonQuery();
-
-                sqlCom = new SQLiteCommand("create table Wages"
-                + "(id INTEGER PRIMARY KEY, "
-                + "empl_id INTEGER, "
-                + "date TEXT, "
-                + "value INTEGER)", sqlCon);
+                + "CONSTRAINT ProjectsPK PRIMARY KEY (id))", sqlCon);
                 sqlCom.ExecuteNonQuery();
 
                 sqlCom = new SQLiteCommand("create table TaskTypes"
-                + "(id INTEGER PRIMARY KEY, "
-                + "speed INTEGER, "
-                + "complexity INTEGER)", sqlCon);
+                + "(id          INTEGER, "
+                + "speed        INTEGER, "
+                + "complexity   INTEGER, "
+                + "CONSTRAINT TaskTypesPK PRIMARY KEY (id))", sqlCon);
+                sqlCom.ExecuteNonQuery();
+
+                sqlCom = new SQLiteCommand("create table Tasks"
+                + "(id              INTEGER, "
+                + "name             TEXT, "
+                + "state            BOOLEAN, "
+                + "taskType_id      INTEGER, "
+                + "volume           INTEGER, "
+                + "limitation_date  TEXT, "
+                + "completion_date  TEXT, "
+                + "proj_id          INTEGER, "
+                + "empl_id          INTEGER, "
+                + "CONSTRAINT TasksPK PRIMARY KEY (id), "
+                + "CONSTRAINT Tasks_ProjectsFK FOREIGN KEY(proj_id) REFERENCES Projects(id) ON DELETE CASCADE, "
+                + "CONSTRAINT Tasks_EmployeesFK FOREIGN KEY(empl_id) REFERENCES Employees(id) ON DELETE CASCADE, "
+                + "CONSTRAINT Tasks_TaskTypesFK FOREIGN KEY(empl_id) REFERENCES TaskTypes(id) ON DELETE CASCADE)", sqlCon);
+                sqlCom.ExecuteNonQuery();
+
+                sqlCom = new SQLiteCommand("create table Wages"
+                + "(id      INTEGER, "
+                + "empl_id  INTEGER, "
+                + "date     TEXT, "
+                + "value    INTEGER, "
+                + "CONSTRAINT WagesPK PRIMARY KEY (id), "
+                + "CONSTRAINT TaskTypes_EmployeesFK FOREIGN KEY(empl_id) REFERENCES Employees(id) ON DELETE CASCADE)", sqlCon);
                 sqlCom.ExecuteNonQuery();
 
                 sqlCom = new SQLiteCommand("create table WageCalculationVariables"
-                + "(id INTEGER PRIMARY KEY, "
-                + "value INTEGER)", sqlCon);
+                + "(id      INTEGER, "
+                + "value    INTEGER, "
+                + "CONSTRAINT WageCalculationVariablesPK PRIMARY KEY (id))", sqlCon);
                 sqlCom.ExecuteNonQuery();
 
                 sqlCon.Close();
