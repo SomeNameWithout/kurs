@@ -37,8 +37,15 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.comboBoxTableChoice = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salarySetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.MenuGrid.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewMain
@@ -47,7 +54,7 @@
             this.dataGridViewMain.AllowUserToDeleteRows = false;
             this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMain.ContextMenuStrip = this.MenuGrid;
-            this.dataGridViewMain.Location = new System.Drawing.Point(12, 39);
+            this.dataGridViewMain.Location = new System.Drawing.Point(12, 70);
             this.dataGridViewMain.Name = "dataGridViewMain";
             this.dataGridViewMain.Size = new System.Drawing.Size(711, 295);
             this.dataGridViewMain.TabIndex = 0;
@@ -82,7 +89,7 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(12, 340);
+            this.buttonSearch.Location = new System.Drawing.Point(12, 371);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(127, 23);
             this.buttonSearch.TabIndex = 1;
@@ -93,7 +100,7 @@
             // comboBoxTableChoice
             // 
             this.comboBoxTableChoice.FormattingEnabled = true;
-            this.comboBoxTableChoice.Location = new System.Drawing.Point(146, 12);
+            this.comboBoxTableChoice.Location = new System.Drawing.Point(146, 43);
             this.comboBoxTableChoice.Name = "comboBoxTableChoice";
             this.comboBoxTableChoice.Size = new System.Drawing.Size(195, 21);
             this.comboBoxTableChoice.TabIndex = 2;
@@ -102,26 +109,77 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(12, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Отображаемая таблица";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ReportToolStripMenuItem,
+            this.AnToolStripMenuItem,
+            this.SetToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(735, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ReportToolStripMenuItem
+            // 
+            this.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem";
+            this.ReportToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.ReportToolStripMenuItem.Text = "Отчеты";
+            // 
+            // AnToolStripMenuItem
+            // 
+            this.AnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mailToolStripMenuItem});
+            this.AnToolStripMenuItem.Name = "AnToolStripMenuItem";
+            this.AnToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.AnToolStripMenuItem.Text = "Прочее";
+            // 
+            // SetToolStripMenuItem
+            // 
+            this.SetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salarySetToolStripMenuItem});
+            this.SetToolStripMenuItem.Name = "SetToolStripMenuItem";
+            this.SetToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.SetToolStripMenuItem.Text = "Настройки";
+            // 
+            // mailToolStripMenuItem
+            // 
+            this.mailToolStripMenuItem.Name = "mailToolStripMenuItem";
+            this.mailToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.mailToolStripMenuItem.Text = "Отправить письмо";
+            this.mailToolStripMenuItem.Click += new System.EventHandler(this.mailToolStripMenuItem_Click);
+            // 
+            // salarySetToolStripMenuItem
+            // 
+            this.salarySetToolStripMenuItem.Name = "salarySetToolStripMenuItem";
+            this.salarySetToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.salarySetToolStripMenuItem.Text = "Настройки зарплаты";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 485);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxTableChoice);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.dataGridViewMain);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
             this.MenuGrid.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,6 +195,12 @@
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salarySetToolStripMenuItem;
     }
 }
 

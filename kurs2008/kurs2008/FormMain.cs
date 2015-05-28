@@ -98,5 +98,11 @@ namespace kurs2008
             }
         }
 
+        private void mailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPost fp = new FormPost();
+            fp.Show();
+        }
+
     }
 }
