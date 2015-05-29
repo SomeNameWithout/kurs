@@ -63,7 +63,8 @@ namespace kurs2008
                     switch ((string)comboBoxTableChoice.SelectedItem)
                     {
                         case "Employees":
-                            DBModule.Employee.Add("Employee1");
+                            FormEmployee fe = new FormEmployee();
+                            fe.ShowDialog();
                             break;
                         case "Projects":
                             DBModule.Project.Add("Project1");
@@ -91,9 +92,42 @@ namespace kurs2008
                     break;
                 case "Редактировать":
                     MenuGrid.Visible = false;
+                    switch ((string)comboBoxTableChoice.SelectedItem)
+                    {
+                        case "Employees":
+                            FormEmployee fe = new FormEmployee(int.Parse(dataGridViewMain.CurrentRow.Cells["id"].Value.ToString()));
+                            fe.ShowDialog();
+                            break;
+                    }
+                    if (comboBoxTableChoice.SelectedIndex < 5)
+                    {
+                        comboBoxTableChoice.SelectedIndex++;
+                        comboBoxTableChoice.SelectedIndex--;
+                    }
+                    else
+                    {
+                        comboBoxTableChoice.SelectedIndex--;
+                        comboBoxTableChoice.SelectedIndex++;
+                    }
                     break;
                 case "Удалить":
                     MenuGrid.Visible = false;
+                    switch ((string)comboBoxTableChoice.SelectedItem)
+                    {
+                        case "Employees":
+                            DBModule.Employee.Delete(int.Parse(dataGridViewMain.CurrentRow.Cells["id"].Value.ToString()));
+                            break;
+                    }
+                    if (comboBoxTableChoice.SelectedIndex < 5)
+                    {
+                        comboBoxTableChoice.SelectedIndex++;
+                        comboBoxTableChoice.SelectedIndex--;
+                    }
+                    else
+                    {
+                        comboBoxTableChoice.SelectedIndex--;
+                        comboBoxTableChoice.SelectedIndex++;
+                    }
                     break;
             }
         }

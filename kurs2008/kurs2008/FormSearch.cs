@@ -21,8 +21,8 @@ namespace kurs2008
             try
             {
                 List<string> TablesNames = new List<string>();
-                TablesNames.AddRange(new string[] { "Employees", "Projects", "Tasks", "Wages", "Task types", "Wage calculation variables" });
-                comboBoxColumnChoice.DataSource = TablesNames;
+                TablesNames.AddRange(new string[] { "Employees", "Projects", "Tasks", "Wages", "Task types" });
+                comboBoxTableChoice.DataSource = TablesNames;
             }
             catch (Exception ex)
             {
