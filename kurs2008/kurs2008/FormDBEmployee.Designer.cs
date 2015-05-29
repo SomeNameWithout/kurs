@@ -1,6 +1,6 @@
 ﻿namespace kurs2008
 {
-    partial class FormEmployee
+    partial class FormDBEmployee
     {
         /// <summary>
         /// Required designer variable.

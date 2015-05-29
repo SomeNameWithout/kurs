@@ -9,16 +9,16 @@ using System.Windows.Forms;
 
 namespace kurs2008
 {
-    public partial class FormEmployee : Form
+    public partial class FormDBEmployee : Form
     {
         bool edit;
 
-        public FormEmployee()
+        public FormDBEmployee()
         {
             InitializeComponent();
         }
 
-        public FormEmployee(int i)
+        public FormDBEmployee(int i)
         {
             InitializeComponent();
 

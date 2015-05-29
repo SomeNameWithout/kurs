@@ -21,3 +21,4 @@ C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\
 C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormPost.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormPost.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormEmployee.resources
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormProject.resources

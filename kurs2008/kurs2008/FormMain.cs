@@ -63,11 +63,12 @@ namespace kurs2008
                     switch ((string)comboBoxTableChoice.SelectedItem)
                     {
                         case "Employees":
-                            FormEmployee fe = new FormEmployee();
-                            fe.ShowDialog();
+                            FormDBEmployee fempl = new FormDBEmployee();
+                            fempl.ShowDialog();
                             break;
                         case "Projects":
-                            DBModule.Project.Add("Project1");
+                            FormDBProject fproj = new FormDBProject();
+                            fproj.ShowDialog();
                             break;
                         case "Tasks":
                             DBModule.Task.Add("Task1", false, 1, 100, "10.01.1999", "21.07.2019",1,1);
@@ -95,8 +96,12 @@ namespace kurs2008
                     switch ((string)comboBoxTableChoice.SelectedItem)
                     {
                         case "Employees":
-                            FormEmployee fe = new FormEmployee(int.Parse(dataGridViewMain.CurrentRow.Cells["id"].Value.ToString()));
-                            fe.ShowDialog();
+                            FormDBEmployee fempl = new FormDBEmployee(int.Parse(dataGridViewMain.CurrentRow.Cells["id"].Value.ToString()));
+                            fempl.ShowDialog();
+                            break;
+                        case "Projects":
+                            FormDBProject fproj = new FormDBProject(int.Parse(dataGridViewMain.CurrentRow.Cells["id"].Value.ToString()));
+                            fproj.ShowDialog();
                             break;
                     }
                     if (comboBoxTableChoice.SelectedIndex < 5)
@@ -116,6 +121,9 @@ namespace kurs2008
                     {
                         case "Employees":
                             DBModule.Employee.Delete(int.Parse(dataGridViewMain.CurrentRow.Cells["id"].Value.ToString()));
+                            break;
+                        case "Projects":
+                            DBModule.Project.Delete(int.Parse(dataGridViewMain.CurrentRow.Cells["id"].Value.ToString()));
                             break;
                     }
                     if (comboBoxTableChoice.SelectedIndex < 5)
