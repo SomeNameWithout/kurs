@@ -123,10 +123,11 @@ namespace kurs2008
             }
             public static void EditStart(int i)
             {
-                sqlCon.Open();
                 sqlCom = new SQLiteCommand("SELECT id, name "
                 + "FROM Employees "
                 + "WHERE id=" + i.ToString() + ";", sqlCon);
+
+                sqlCon.Open();
                 SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
                 sqlReader.Read();
                 tempID = int.Parse(sqlReader["id"].ToString());
@@ -162,7 +163,7 @@ namespace kurs2008
             }
             public static void Delete(int i)
             {
-                sqlCom = new SQLiteCommand("DELETE FROM Projects"
+                sqlCom = new SQLiteCommand("DELETE FROM Projects "
                 + "WHERE id=" + i + ";", sqlCon);
 
                 sqlCon.Open();
@@ -171,13 +172,14 @@ namespace kurs2008
             }
             public static void EditStart(int i)
             {
-                sqlCon.Open();
                 sqlCom = new SQLiteCommand("SELECT id, name "
                 + "FROM Projects "
                 + "WHERE id=" + i.ToString() + ";", sqlCon);
+
+                sqlCon.Open();
                 SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
                 sqlReader.Read();
-                tempID = (int)sqlReader["id"];
+                tempID = int.Parse(sqlReader["id"].ToString());
                 tempName = sqlReader["name"].ToString();
                 sqlReader.Close();
                 sqlCon.Close();
@@ -222,7 +224,7 @@ namespace kurs2008
             }
             public static void Delete(int i)
             {
-                sqlCom = new SQLiteCommand("DELETE FROM Tasks"
+                sqlCom = new SQLiteCommand("DELETE FROM Tasks "
                 + "WHERE id=" + i + ";", sqlCon);
 
                 sqlCon.Open();
@@ -236,18 +238,21 @@ namespace kurs2008
                 + "proj_id , empl_id"
                 + "FROM Tasks "
                 + "WHERE id=" + i.ToString() + ";", sqlCon);
+
+                sqlCon.Open();
                 SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
                 sqlReader.Read();
-                tempID = (int)sqlReader["id"];
+                tempID = int.Parse(sqlReader["id"].ToString());
                 tempName = sqlReader["name"].ToString();
-                tempState = (bool)sqlReader["state"];
-                tempTaskType_ID = (int)sqlReader["taskType_id"];
-                tempVolume = (int)sqlReader["volume"];
+                tempState = bool.Parse(sqlReader["state"].ToString());
+                tempTaskType_ID = int.Parse(sqlReader["taskType_id"].ToString());
+                tempVolume = int.Parse(sqlReader["volume"].ToString());
                 tempLimitation_date = sqlReader["limitation_date"].ToString();
                 tempCompletion_date = sqlReader["completion_date"].ToString();
-                tempProj_ID = (int)sqlReader["proj_id"];
-                tempEmpl_ID = (int)sqlReader["empl_id"];
+                tempProj_ID = int.Parse(sqlReader["proj_id"].ToString());
+                tempEmpl_ID = int.Parse(sqlReader["empl_id"].ToString());
                 sqlReader.Close();
+                sqlCon.Close();
             }
             public static void EditConfirm()
             {
@@ -286,7 +291,7 @@ namespace kurs2008
             }
             public static void Delete(int i)
             {
-                sqlCom = new SQLiteCommand("DELETE FROM Wages"
+                sqlCom = new SQLiteCommand("DELETE FROM Wages "
                 + "WHERE id=" + i + ";", sqlCon);
 
                 sqlCon.Open();
@@ -298,13 +303,16 @@ namespace kurs2008
                 sqlCom = new SQLiteCommand("SELECT id, empl_id, date, value "
                 + "FROM Wages "
                 + "WHERE id=" + i.ToString() + ";", sqlCon);
+
+                sqlCon.Open();
                 SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
                 sqlReader.Read();
-                tempID = (int)sqlReader["id"];
-                tempEmpl_ID = (int)sqlReader["empl_id"];
+                tempID = int.Parse(sqlReader["id"].ToString());
+                tempEmpl_ID = int.Parse(sqlReader["empl_id"].ToString());
                 tempDate = sqlReader["date"].ToString();
-                tempVolume = (int)sqlReader["value"];
+                tempVolume = int.Parse(sqlReader["value"].ToString());
                 sqlReader.Close();
+                sqlCon.Close();
             }
             public static void EditConfirm()
             {
@@ -337,7 +345,7 @@ namespace kurs2008
             }
             public static void Delete(int i)
             {
-                sqlCom = new SQLiteCommand("DELETE FROM TaskTypes"
+                sqlCom = new SQLiteCommand("DELETE FROM TaskTypes "
                 + "WHERE id=" + i + ";", sqlCon);
 
                 sqlCon.Open();
@@ -349,12 +357,15 @@ namespace kurs2008
                 sqlCom = new SQLiteCommand("SELECT id, speed, complexity "
                 + "FROM TaskTypes "
                 + "WHERE id=" + i.ToString() + ";", sqlCon);
+
+                sqlCon.Open();
                 SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
                 sqlReader.Read();
-                tempID = (int)sqlReader["id"];
-                tempSpeed = (int)sqlReader["speed"];
-                tempComplexity = (int)sqlReader["complexity"];
+                tempID = int.Parse(sqlReader["id"].ToString());
+                tempSpeed = int.Parse(sqlReader["speed"].ToString());
+                tempComplexity = int.Parse(sqlReader["complexity"].ToString());
                 sqlReader.Close();
+                sqlCon.Close();
             }
             public static void EditConfirm()
             {
@@ -385,7 +396,7 @@ namespace kurs2008
             }
             public static void Delete(int i)
             {
-                sqlCom = new SQLiteCommand("DELETE FROM WageCalculationVariables"
+                sqlCom = new SQLiteCommand("DELETE FROM WageCalculationVariables "
                 + "WHERE id=" + i + ";", sqlCon);
 
                 sqlCon.Open();
@@ -397,11 +408,14 @@ namespace kurs2008
                 sqlCom = new SQLiteCommand("SELECT id, value "
                 + "FROM WageCalculationVariables "
                 + "WHERE id=" + i.ToString() + ";", sqlCon);
+
+                sqlCon.Open();
                 SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
                 sqlReader.Read();
-                tempID = (int)sqlReader["id"];
-                tempVolume = (int)sqlReader["value"];
+                tempID = int.Parse(sqlReader["id"].ToString());
+                tempVolume = int.Parse(sqlReader["value"].ToString());
                 sqlReader.Close();
+                sqlCon.Close();
             }
             public static void EditConfirm()
             {
