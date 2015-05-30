@@ -203,7 +203,7 @@ namespace kurs2008
             public static string tempName = "";
             public static bool tempState = false;
             public static int tempTaskType_ID = -1;
-            public static int tempVolume;//объём работы в чел/час
+            public static int tempVolume=-1;//объём работы в чел/час
             public static string tempLimitation_date = "";//срок сдачи задания
             public static string tempCompletion_date = "";//фактическая дата выполнения задачи
             public static int tempProj_ID = -1;

@@ -40,8 +40,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salarySetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.MenuGrid.SuspendLayout();
@@ -56,6 +56,7 @@
             this.dataGridViewMain.ContextMenuStrip = this.MenuGrid;
             this.dataGridViewMain.Location = new System.Drawing.Point(12, 70);
             this.dataGridViewMain.Name = "dataGridViewMain";
+            this.dataGridViewMain.ReadOnly = true;
             this.dataGridViewMain.Size = new System.Drawing.Size(711, 295);
             this.dataGridViewMain.TabIndex = 0;
             // 
@@ -72,7 +73,7 @@
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             // 
             // редактироватьToolStripMenuItem
@@ -141,6 +142,13 @@
             this.AnToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.AnToolStripMenuItem.Text = "Прочее";
             // 
+            // mailToolStripMenuItem
+            // 
+            this.mailToolStripMenuItem.Name = "mailToolStripMenuItem";
+            this.mailToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.mailToolStripMenuItem.Text = "Отправить письмо";
+            this.mailToolStripMenuItem.Click += new System.EventHandler(this.mailToolStripMenuItem_Click);
+            // 
             // SetToolStripMenuItem
             // 
             this.SetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -148,13 +156,6 @@
             this.SetToolStripMenuItem.Name = "SetToolStripMenuItem";
             this.SetToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.SetToolStripMenuItem.Text = "Настройки";
-            // 
-            // mailToolStripMenuItem
-            // 
-            this.mailToolStripMenuItem.Name = "mailToolStripMenuItem";
-            this.mailToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.mailToolStripMenuItem.Text = "Отправить письмо";
-            this.mailToolStripMenuItem.Click += new System.EventHandler(this.mailToolStripMenuItem_Click);
             // 
             // salarySetToolStripMenuItem
             // 

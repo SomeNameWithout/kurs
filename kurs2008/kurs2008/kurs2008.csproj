@@ -52,12 +52,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BDModule.cs" />
+    <Compile Include="DBModule.cs" />
     <Compile Include="FormDBEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDBEmployee.Designer.cs">
       <DependentUpon>FormDBEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDBTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDBTask.Designer.cs">
+      <DependentUpon>FormDBTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDBTaskType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDBTaskType.Designer.cs">
+      <DependentUpon>FormDBTaskType.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -87,6 +99,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormDBEmployee.resx">
       <DependentUpon>FormDBEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDBTask.resx">
+      <DependentUpon>FormDBTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDBTaskType.resx">
+      <DependentUpon>FormDBTaskType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
