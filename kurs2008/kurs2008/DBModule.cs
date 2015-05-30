@@ -213,7 +213,7 @@ namespace kurs2008
                 sqlCom = new SQLiteCommand("INSERT INTO Tasks(name, state , "
                 + "taskType_id, volume, limitation_date, completion_date , "
                 + "proj_id , empl_id)"
-                + "VALUES ('" + name + "', '" + state + "', '"
+                + "VALUES ('" + name + "', '" + (state ? 1 : 0) + "', '"
                 + taskType + "', '" + volume + "', '"
                 + LDate + "', '" + CDate + "', '"
                 + Proj_ID + "', '" + Empl_ID + "');", sqlCon);
@@ -258,7 +258,7 @@ namespace kurs2008
             {
                 sqlCom = new SQLiteCommand("UPDATE Tasks "
                 + "SET name = '" + tempName + "', "
-                + "state = " + tempState + ", "
+                + "state = " + (tempState?1:0) + ", "
                 + "taskType_id = " + tempTaskType_ID + ", "
                 + "volume = " + tempVolume + ", "
                 + "limitation_date = '" + tempLimitation_date + "', "

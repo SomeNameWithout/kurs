@@ -51,7 +51,6 @@ namespace kurs2008
             ComboboxTablesNamesDictionary.Add("Wages", "Wages");
 
             dataGridViewMain.DataSource = DBModule.QuerySelection(@"SELECT * FROM " + ComboboxTablesNamesDictionary[(string)comboBoxTableChoice.SelectedItem] + ";");
-
         }
 
         private void MenuGrid_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
