@@ -31,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AODL, Version=1.2.0.1, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AODL.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -50,6 +58,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=1.0.1812.29779, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ZedGraph.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBModule.cs" />
@@ -71,6 +83,12 @@
     <Compile Include="FormDBTaskType.Designer.cs">
       <DependentUpon>FormDBTaskType.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormECALC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormECALC.Designer.cs">
+      <DependentUpon>FormECALC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,11 +107,23 @@
     <Compile Include="FormDBProject.Designer.cs">
       <DependentUpon>FormDBProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSalSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSalSet.Designer.cs">
+      <DependentUpon>FormSalSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSearch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSearch.Designer.cs">
       <DependentUpon>FormSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSPDF.Designer.cs">
+      <DependentUpon>FormSPDF.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +136,9 @@
     <EmbeddedResource Include="FormDBTaskType.resx">
       <DependentUpon>FormDBTaskType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormECALC.resx">
+      <DependentUpon>FormECALC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,8 +148,14 @@
     <EmbeddedResource Include="FormDBProject.resx">
       <DependentUpon>FormDBProject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormSalSet.resx">
+      <DependentUpon>FormSalSet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSearch.resx">
       <DependentUpon>FormSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSPDF.resx">
+      <DependentUpon>FormSPDF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

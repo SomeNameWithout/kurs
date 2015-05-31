@@ -161,5 +161,23 @@ namespace kurs2008
             fp.Show();
         }
 
+        private void salaryRepToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSPDF pdf = new FormSPDF();
+            pdf.Show();
+        }
+
+        private void efficiencyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormECALC calc = new FormECALC();
+            calc.Show();
+        }
+
+        private void salarySetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSalSet fss = new FormSalSet();
+            fss.Show();
+        }
+
     }
 }

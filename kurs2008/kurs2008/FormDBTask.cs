@@ -33,7 +33,7 @@ namespace kurs2008
             comboBoxProject.DataSource = ProjectList;
 
             List<string> EmployeeList = new List<string>();
-            foreach (DataRow row in DBModule.QuerySelection("SELECT id FROM Employees;").Rows)
+            foreach (DataRow row in DBModule.QuerySelection("SELECT id, name FROM Employees;").Rows)
             {
                 EmployeeList.Add(row["id"].ToString());
             }
@@ -70,7 +70,7 @@ namespace kurs2008
             comboBoxProject.SelectedItem = DBModule.Task.tempProj_ID.ToString();
 
             List<string> EmployeeList = new List<string>();
-            foreach (DataRow row in DBModule.QuerySelection("SELECT id FROM Employees;").Rows)
+            foreach (DataRow row in DBModule.QuerySelection("SELECT id, name FROM Employees;").Rows)
             {
                 EmployeeList.Add(row["id"].ToString());
             }
@@ -80,16 +80,24 @@ namespace kurs2008
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DBModule.Task.tempTaskType_ID = int.Parse(comboBoxTaskType.SelectedItem.ToString());
+                DBModule.Task.tempProj_ID = int.Parse(comboBoxProject.SelectedItem.ToString());
+                DBModule.Task.tempEmpl_ID = int.Parse(comboBoxEmployee.SelectedItem.ToString());
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message + "\nВ полях с выбором допустимы только имеющиеся значения.");
+                this.Close();
+            }
             if (edit)
             {
                 DBModule.Task.tempName = textBoxName.Text;
                 DBModule.Task.tempState = checkBoxState.Checked;
-                DBModule.Task.tempTaskType_ID = int.Parse(comboBoxTaskType.SelectedItem.ToString());
                 DBModule.Task.tempVolume = int.Parse(textBoxVolume.Text);
                 DBModule.Task.tempLimitation_date = textBoxLDate.Text;
                 DBModule.Task.tempCompletion_date = textBoxCDate.Text;
-                DBModule.Task.tempProj_ID = int.Parse(comboBoxProject.SelectedItem.ToString());
-                DBModule.Task.tempEmpl_ID = int.Parse(comboBoxEmployee.SelectedItem.ToString());
                 DBModule.Task.EditConfirm();
             }
             else

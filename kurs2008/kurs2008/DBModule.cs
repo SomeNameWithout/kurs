@@ -53,7 +53,7 @@ namespace kurs2008
                 + "CONSTRAINT TasksPK PRIMARY KEY (id), "
                 + "CONSTRAINT Tasks_ProjectsFK FOREIGN KEY(proj_id) REFERENCES Projects(id) ON DELETE CASCADE, "
                 + "CONSTRAINT Tasks_EmployeesFK FOREIGN KEY(empl_id) REFERENCES Employees(id) ON DELETE CASCADE, "
-                + "CONSTRAINT Tasks_TaskTypesFK FOREIGN KEY(empl_id) REFERENCES TaskTypes(id) ON DELETE CASCADE)", sqlCon);
+                + "CONSTRAINT Tasks_TaskTypesFK FOREIGN KEY(taskType_id) REFERENCES TaskTypes(id) ON DELETE CASCADE)", sqlCon);
                 sqlCom.ExecuteNonQuery();
 
                 sqlCom = new SQLiteCommand("create table Wages"
@@ -233,9 +233,9 @@ namespace kurs2008
             }
             public static void EditStart(int i)
             {
-                sqlCom = new SQLiteCommand("SELECT name, state , "
-                + "taskType_id, volume, limitation_date, completion_date , "
-                + "proj_id , empl_id"
+                sqlCom = new SQLiteCommand("SELECT id, name, state, "
+                + "taskType_id, volume, limitation_date, completion_date, "
+                + "proj_id , empl_id "
                 + "FROM Tasks "
                 + "WHERE id=" + i.ToString() + ";", sqlCon);
 
@@ -264,7 +264,7 @@ namespace kurs2008
                 + "limitation_date = '" + tempLimitation_date + "', "
                 + "completion_date = '" + tempCompletion_date + "', "
                 + "proj_id = " + tempProj_ID + ", "
-                + "empl_id = " + tempEmpl_ID + ", "
+                + "empl_id = " + tempEmpl_ID + " "
                 + "WHERE id=" + tempID + ";", sqlCon);
 
                 sqlCon.Open();
@@ -384,7 +384,7 @@ namespace kurs2008
             private static int tempID = -1;
             public static int TempID
             { get { return tempID; } }
-            public static int tempVolume;
+            public static int tempValue;
             public static void Add(int Volume)
             {
                 sqlCom = new SQLiteCommand("INSERT INTO WageCalculationVariables(value) "
@@ -413,14 +413,14 @@ namespace kurs2008
                 SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
                 sqlReader.Read();
                 tempID = int.Parse(sqlReader["id"].ToString());
-                tempVolume = int.Parse(sqlReader["value"].ToString());
+                tempValue = int.Parse(sqlReader["value"].ToString());
                 sqlReader.Close();
                 sqlCon.Close();
             }
             public static void EditConfirm()
             {
                 sqlCom = new SQLiteCommand("UPDATE WageCalculationVariables "
-                + "SET value = " + tempVolume + " "
+                + "SET value = " + tempValue + " "
                 + "WHERE id=" + tempID + ";", sqlCon);
 
                 sqlCon.Open();
