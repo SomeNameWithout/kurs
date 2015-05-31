@@ -173,5 +173,11 @@ namespace kurs2008
             calc.Show();
         }
 
+        private void salarySetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSalSet fss = new FormSalSet();
+            fss.Show();
+        }
+
     }
 }

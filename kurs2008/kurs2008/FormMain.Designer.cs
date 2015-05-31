@@ -39,15 +39,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salarySetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salaryRepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.efficiencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.graphsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grWorkComplToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salarySetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.MenuGrid.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -143,35 +143,6 @@
             this.ReportToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.ReportToolStripMenuItem.Text = "Отчеты";
             // 
-            // AnToolStripMenuItem
-            // 
-            this.AnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mailToolStripMenuItem});
-            this.AnToolStripMenuItem.Name = "AnToolStripMenuItem";
-            this.AnToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.AnToolStripMenuItem.Text = "Прочее";
-            // 
-            // mailToolStripMenuItem
-            // 
-            this.mailToolStripMenuItem.Name = "mailToolStripMenuItem";
-            this.mailToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.mailToolStripMenuItem.Text = "Отправить письмо";
-            this.mailToolStripMenuItem.Click += new System.EventHandler(this.mailToolStripMenuItem_Click);
-            // 
-            // SetToolStripMenuItem
-            // 
-            this.SetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salarySetToolStripMenuItem});
-            this.SetToolStripMenuItem.Name = "SetToolStripMenuItem";
-            this.SetToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.SetToolStripMenuItem.Text = "Настройки";
-            // 
-            // salarySetToolStripMenuItem
-            // 
-            this.salarySetToolStripMenuItem.Name = "salarySetToolStripMenuItem";
-            this.salarySetToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.salarySetToolStripMenuItem.Text = "Настройки зарплаты";
-            // 
             // salaryRepToolStripMenuItem
             // 
             this.salaryRepToolStripMenuItem.Name = "salaryRepToolStripMenuItem";
@@ -206,6 +177,36 @@
             this.controlPointsToolStripMenuItem.Name = "controlPointsToolStripMenuItem";
             this.controlPointsToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
             this.controlPointsToolStripMenuItem.Text = "Работа с контрольными точками";
+            // 
+            // AnToolStripMenuItem
+            // 
+            this.AnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mailToolStripMenuItem});
+            this.AnToolStripMenuItem.Name = "AnToolStripMenuItem";
+            this.AnToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.AnToolStripMenuItem.Text = "Прочее";
+            // 
+            // mailToolStripMenuItem
+            // 
+            this.mailToolStripMenuItem.Name = "mailToolStripMenuItem";
+            this.mailToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.mailToolStripMenuItem.Text = "Отправить письмо";
+            this.mailToolStripMenuItem.Click += new System.EventHandler(this.mailToolStripMenuItem_Click);
+            // 
+            // SetToolStripMenuItem
+            // 
+            this.SetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salarySetToolStripMenuItem});
+            this.SetToolStripMenuItem.Name = "SetToolStripMenuItem";
+            this.SetToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.SetToolStripMenuItem.Text = "Настройки";
+            // 
+            // salarySetToolStripMenuItem
+            // 
+            this.salarySetToolStripMenuItem.Name = "salarySetToolStripMenuItem";
+            this.salarySetToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.salarySetToolStripMenuItem.Text = "Настройки зарплаты";
+            this.salarySetToolStripMenuItem.Click += new System.EventHandler(this.salarySetToolStripMenuItem_Click);
             // 
             // FormMain
             // 
