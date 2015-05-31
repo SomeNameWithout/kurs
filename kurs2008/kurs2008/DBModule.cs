@@ -11,6 +11,7 @@ namespace kurs2008
     class DBModule
     {
         public static SQLiteConnection sqlCon;
+        public static int MaxBurden = 15;
         static SQLiteCommand sqlCom;
         public DBModule()
         {
@@ -217,8 +218,30 @@ namespace kurs2008
                 + taskType + "', '" + volume + "', '"
                 + LDate + "', '" + CDate + "', '"
                 + Proj_ID + "', '" + Empl_ID + "');", sqlCon);
-
                 sqlCon.Open();
+                sqlCom.ExecuteNonQuery();
+                sqlCon.Close();
+
+                int burd;
+                sqlCom = new SQLiteCommand("SELECT burden "
+                + "FROM Employees "
+                + "WHERE id=" + Empl_ID + ";", sqlCon);
+                sqlCon.Open();
+                SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
+                sqlReader.Read();
+                burd = int.Parse(sqlReader["burden"].ToString());
+
+                sqlCom = new SQLiteCommand("SELECT id, speed, complexity "
+               + "FROM TaskTypes "
+               + "WHERE id=" + taskType.ToString() + ";", sqlCon);
+                int taskDif;
+                SQLiteDataReader sqlRead = sqlCom.ExecuteReader();
+                sqlRead.Read();
+                taskDif = int.Parse(sqlRead["complexity"].ToString());
+
+                sqlCom = new SQLiteCommand("UPDATE Employees "
+              + "SET burden = '" + (((taskDif + burd) * 100) / MaxBurden) + "' "
+              + "WHERE id= " + Empl_ID + ";", sqlCon);
                 sqlCom.ExecuteNonQuery();
                 sqlCon.Close();
             }
