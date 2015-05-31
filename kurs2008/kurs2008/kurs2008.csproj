@@ -50,6 +50,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=1.0.1812.29779, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ZedGraph.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBModule.cs" />
@@ -70,6 +74,12 @@
     </Compile>
     <Compile Include="FormDBTaskType.Designer.cs">
       <DependentUpon>FormDBTaskType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormECALC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormECALC.Designer.cs">
+      <DependentUpon>FormECALC.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -95,6 +105,12 @@
     <Compile Include="FormSearch.Designer.cs">
       <DependentUpon>FormSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSPDF.Designer.cs">
+      <DependentUpon>FormSPDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormDBEmployee.resx">
@@ -105,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDBTaskType.resx">
       <DependentUpon>FormDBTaskType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormECALC.resx">
+      <DependentUpon>FormECALC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -117,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearch.resx">
       <DependentUpon>FormSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSPDF.resx">
+      <DependentUpon>FormSPDF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

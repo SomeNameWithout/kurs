@@ -43,6 +43,11 @@
             this.mailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salarySetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salaryRepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.efficiencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.graphsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grWorkComplToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.MenuGrid.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -73,7 +78,7 @@
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             // 
             // редактироватьToolStripMenuItem
@@ -120,6 +125,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ReportToolStripMenuItem,
+            this.graphsToolStripMenuItem,
             this.AnToolStripMenuItem,
             this.SetToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -130,6 +136,9 @@
             // 
             // ReportToolStripMenuItem
             // 
+            this.ReportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salaryRepToolStripMenuItem,
+            this.efficiencyToolStripMenuItem});
             this.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem";
             this.ReportToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.ReportToolStripMenuItem.Text = "Отчеты";
@@ -162,6 +171,41 @@
             this.salarySetToolStripMenuItem.Name = "salarySetToolStripMenuItem";
             this.salarySetToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.salarySetToolStripMenuItem.Text = "Настройки зарплаты";
+            // 
+            // salaryRepToolStripMenuItem
+            // 
+            this.salaryRepToolStripMenuItem.Name = "salaryRepToolStripMenuItem";
+            this.salaryRepToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.salaryRepToolStripMenuItem.Text = "Зарплатная ведомость (PDF)";
+            this.salaryRepToolStripMenuItem.Click += new System.EventHandler(this.salaryRepToolStripMenuItem_Click);
+            // 
+            // efficiencyToolStripMenuItem
+            // 
+            this.efficiencyToolStripMenuItem.Name = "efficiencyToolStripMenuItem";
+            this.efficiencyToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.efficiencyToolStripMenuItem.Text = "Результативность (calc)";
+            this.efficiencyToolStripMenuItem.Click += new System.EventHandler(this.efficiencyToolStripMenuItem_Click);
+            // 
+            // graphsToolStripMenuItem
+            // 
+            this.graphsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.grWorkComplToolStripMenuItem,
+            this.controlPointsToolStripMenuItem});
+            this.graphsToolStripMenuItem.Name = "graphsToolStripMenuItem";
+            this.graphsToolStripMenuItem.Size = new System.Drawing.Size(142, 20);
+            this.graphsToolStripMenuItem.Text = "Построение графиков";
+            // 
+            // grWorkComplToolStripMenuItem
+            // 
+            this.grWorkComplToolStripMenuItem.Name = "grWorkComplToolStripMenuItem";
+            this.grWorkComplToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.grWorkComplToolStripMenuItem.Text = "График выполнения работ";
+            // 
+            // controlPointsToolStripMenuItem
+            // 
+            this.controlPointsToolStripMenuItem.Name = "controlPointsToolStripMenuItem";
+            this.controlPointsToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.controlPointsToolStripMenuItem.Text = "Работа с контрольными точками";
             // 
             // FormMain
             // 
@@ -202,6 +246,11 @@
         private System.Windows.Forms.ToolStripMenuItem mailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salarySetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salaryRepToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem efficiencyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem graphsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem grWorkComplToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlPointsToolStripMenuItem;
     }
 }
 
