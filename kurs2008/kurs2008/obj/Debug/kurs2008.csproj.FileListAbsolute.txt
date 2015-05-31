@@ -45,9 +45,12 @@ C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008
 C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\bin\Debug\AODL.dll
 C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\bin\Debug\itextsharp.dll
 C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormSalSet.resources
+<<<<<<< HEAD
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\AODL.dll
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\itextsharp.dll
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\ZedGraph.dll
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormECALC.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormSalSet.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormSPDF.resources
+=======
+>>>>>>> origin/kurs2008/master
