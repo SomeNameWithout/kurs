@@ -210,13 +210,13 @@ namespace kurs2008
             public static string tempCompletion_date = "";//фактическая дата выполнения задачи
             public static int tempProj_ID = -1;
             public static int tempEmpl_ID = -1;
-            public static void Add(string name, bool state, int taskType, int volume, string LDate, string CDate, int Proj_ID, int Empl_ID)
+            public static void Add(string name, bool state, int taskType_ID, int volume, string LDate, string CDate, int Proj_ID, int Empl_ID)
             {
                 sqlCom = new SQLiteCommand("INSERT INTO Tasks(name, state , "
                 + "taskType_id, volume, limitation_date, completion_date , "
                 + "proj_id , empl_id)"
                 + "VALUES ('" + name + "', '" + (state ? 1 : 0) + "', '"
-                + taskType + "', '" + volume + "', '"
+                + taskType_ID + "', '" + volume + "', '"
                 + LDate + "', '" + CDate + "', '"
                 + Proj_ID + "', '" + Empl_ID + "');", sqlCon);
 
@@ -224,40 +224,26 @@ namespace kurs2008
                 sqlCom.ExecuteNonQuery();
                 sqlCon.Close();
 
-                int burd;
-                sqlCom = new SQLiteCommand("SELECT burden "
-                + "FROM Employees "
-                + "WHERE id=" + Empl_ID + ";", sqlCon);
+                DBModule.Employee.EditStart(Empl_ID);
+                int burd = DBModule.Employee.tempBurden;
 
-                sqlCon.Open();
-                SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
-                sqlReader.Read();
-                burd = int.Parse(sqlReader["burden"].ToString());
-                sqlReader.Close();
-                sqlCon.Close();
+                DBModule.TaskType.EditStart(taskType_ID);
+                int taskDif = DBModule.TaskType.tempComplexity;
 
-                int taskDif;
-                sqlCom = new SQLiteCommand("SELECT complexity "
-                + "FROM TaskTypes "
-                + "WHERE id=" + taskType + ";", sqlCon);
-
-                sqlCon.Open();
-                sqlReader = sqlCom.ExecuteReader();
-                sqlReader.Read();
-                taskDif = int.Parse(sqlReader["complexity"].ToString());
-                sqlReader.Close();
-                sqlCon.Close();
-
-                sqlCom = new SQLiteCommand("UPDATE Employees "
-                + "SET burden = '" + ((taskDif * volume) + burd) + "' "
-                + "WHERE id= " + Empl_ID + ";", sqlCon);
-
-                sqlCon.Open();
-                sqlCom.ExecuteNonQuery();
-                sqlCon.Close();
+                DBModule.Employee.tempBurden = (taskDif * volume) + burd;
+                DBModule.Employee.EditConfirm();
             }
             public static void Delete(int i)
             {
+                DBModule.Task.EditStart(i);
+
+                DBModule.TaskType.EditStart(tempTaskType_ID);
+                int taskDif = DBModule.TaskType.tempComplexity;
+
+                DBModule.Employee.EditStart(tempEmpl_ID);
+                DBModule.Employee.tempBurden -= (taskDif * tempVolume);
+                DBModule.Employee.EditConfirm();
+
                 sqlCom = new SQLiteCommand("DELETE FROM Tasks "
                 + "WHERE id=" + i + ";", sqlCon);
 
@@ -287,6 +273,13 @@ namespace kurs2008
                 tempEmpl_ID = int.Parse(sqlReader["empl_id"].ToString());
                 sqlReader.Close();
                 sqlCon.Close();
+
+                DBModule.TaskType.EditStart(tempTaskType_ID);
+                int taskDif = DBModule.TaskType.tempComplexity;
+
+                DBModule.Employee.EditStart(tempEmpl_ID);
+                DBModule.Employee.tempBurden -= (taskDif * tempVolume);
+                DBModule.Employee.EditConfirm();
             }
             public static void EditConfirm()
             {
@@ -304,6 +297,15 @@ namespace kurs2008
                 sqlCon.Open();
                 sqlCom.ExecuteNonQuery();
                 sqlCon.Close();
+
+                DBModule.Employee.EditStart(tempEmpl_ID);
+                int burd = DBModule.Employee.tempBurden;
+
+                DBModule.TaskType.EditStart(tempTaskType_ID);
+                int taskDif = DBModule.TaskType.tempComplexity;
+
+                DBModule.Employee.tempBurden = (taskDif * tempVolume) + burd;
+                DBModule.Employee.EditConfirm();
             }
         }
         public static class Wage
