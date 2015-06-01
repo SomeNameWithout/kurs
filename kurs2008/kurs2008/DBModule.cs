@@ -233,21 +233,23 @@ namespace kurs2008
                 SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
                 sqlReader.Read();
                 burd = int.Parse(sqlReader["burden"].ToString());
+                sqlReader.Close();
                 sqlCon.Close();
 
-                sqlCom = new SQLiteCommand("SELECT id, speed, complexity "
-                + "FROM TaskTypes "
-                + "WHERE id=" + taskType.ToString() + ";", sqlCon);
                 int taskDif;
+                sqlCom = new SQLiteCommand("SELECT complexity "
+                + "FROM TaskTypes "
+                + "WHERE id=" + taskType + ";", sqlCon);
 
                 sqlCon.Open();
                 sqlReader = sqlCom.ExecuteReader();
                 sqlReader.Read();
                 taskDif = int.Parse(sqlReader["complexity"].ToString());
+                sqlReader.Close();
                 sqlCon.Close();
 
                 sqlCom = new SQLiteCommand("UPDATE Employees "
-                + "SET burden = '" + (((taskDif * 100) / FormSalSet.MaxBurden)+ burd) + "' "
+                + "SET burden = '" + ((taskDif * volume) + burd) + "' "
                 + "WHERE id= " + Empl_ID + ";", sqlCon);
 
                 sqlCon.Open();
