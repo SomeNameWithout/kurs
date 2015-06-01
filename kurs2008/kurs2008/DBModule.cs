@@ -11,7 +11,7 @@ namespace kurs2008
     class DBModule
     {
         public static SQLiteConnection sqlCon;
-        public static int MaxBurden = 15;
+       // FormSalSet z = new FormSalSet();
         static SQLiteCommand sqlCom;
         public DBModule()
         {
@@ -240,7 +240,7 @@ namespace kurs2008
                 taskDif = int.Parse(sqlRead["complexity"].ToString());
 
                 sqlCom = new SQLiteCommand("UPDATE Employees "
-              + "SET burden = '" + (((taskDif + burd) * 100) / MaxBurden) + "' "
+              + "SET burden = '" + (((taskDif * 100) / FormSalSet.MaxBurden)+ burd) + "' "
               + "WHERE id= " + Empl_ID + ";", sqlCon);
                 sqlCom.ExecuteNonQuery();
                 sqlCon.Close();
