@@ -104,7 +104,7 @@ namespace kurs2008
             public static int TempID
             { get { return tempID; } }
             public static string tempName = "";
-            public static int tempBurden = 0;
+            public static int tempBurden = -1;
             public static void Add(string name)
             {
                 sqlCom = new SQLiteCommand("INSERT INTO Employees(name, burden) "
@@ -125,7 +125,7 @@ namespace kurs2008
             }
             public static void EditStart(int i)
             {
-                sqlCom = new SQLiteCommand("SELECT id, name "
+                sqlCom = new SQLiteCommand("SELECT id, name, burden "
                 + "FROM Employees "
                 + "WHERE id=" + i.ToString() + ";", sqlCon);
 
