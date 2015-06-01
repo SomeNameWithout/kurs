@@ -176,24 +176,31 @@ namespace kurs2008
         private void salaryRepToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string name = "1";
-            InputBox.Input("Ввод значения", "Введите значение a:", out name);
-            var doc = new Document();
-            PdfWriter.GetInstance(doc, new FileStream(@"D:\" + name + ".pdf", FileMode.Create));
-            doc.Open();
-
-            doc.Close();
+            if (Convert.ToString(comboBoxTableChoice.SelectedItem) == "Wages")
+            {
+                InputBox.Input("Ввод значения", "Введите значение a:", out name);
+                var doc = new Document();
+                PdfWriter.GetInstance(doc, new FileStream(@"D:\" + name + ".pdf", FileMode.Create));
+                doc.Open();
+                doc.Close();
+            }
+            else MessageBox.Show("Выберите таблицу зарплат!");
         }
 
         private void efficiencyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string name = "1";
-            InputBox.Input("Ввод значения", "Введите значение a:", out name);
-
-            AODL.Document.SpreadsheetDocuments.SpreadsheetDocument spreadsheetDocument = new SpreadsheetDocument();
-            spreadsheetDocument.New();
-            Table table = new Table(spreadsheetDocument, "First", "tablefirst");
-
-            spreadsheetDocument.SaveTo(@"D:\" + name + ".ods");
+            int complited;
+            int overall;
+            if (Convert.ToString(comboBoxTableChoice.SelectedItem) == "Tasks")
+            {
+                InputBox.Input("Ввод значения", "Введите значение a:", out name);
+                AODL.Document.SpreadsheetDocuments.SpreadsheetDocument spreadsheetDocument = new SpreadsheetDocument();
+                spreadsheetDocument.New();
+                Table table = new Table(spreadsheetDocument, "First", "tablefirst");
+                spreadsheetDocument.SaveTo(@"D:\" + name + ".ods");
+            }
+            else MessageBox.Show("Выберите таблицу задач!");
         }
 
         private void salarySetToolStripMenuItem_Click(object sender, EventArgs e)
