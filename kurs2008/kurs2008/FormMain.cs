@@ -213,8 +213,7 @@ namespace kurs2008
         {
             DBModule.WageCalculationVariable.Add("BasicSalary", 15000);
             DBModule.WageCalculationVariable.Add("BasicPenalty", 500);
-
-            /*DBModule.WageCalculationVariable.EditStart(1);
+            DBModule.WageCalculationVariable.EditStart(1);
             int volume = DBModule.WageCalculationVariable.tempValue;
             DBModule.WageCalculationVariable.EditStart(2);
             int temp = DBModule.WageCalculationVariable.tempValue;
@@ -243,7 +242,7 @@ namespace kurs2008
                     i = dataGridViewMain.Rows.Count;
                 }
             }
-           */
+          
 
         }
 
