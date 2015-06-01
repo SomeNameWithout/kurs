@@ -68,6 +68,7 @@ namespace kurs2008
 
                 sqlCom = new SQLiteCommand("create table WageCalculationVariables"
                 + "(id      INTEGER, "
+                + "name     TEXT, "
                 + "value    INTEGER, "
                 + "CONSTRAINT WageCalculationVariablesPK PRIMARY KEY (id))", sqlCon);
                 sqlCom.ExecuteNonQuery();
@@ -218,6 +219,7 @@ namespace kurs2008
                 + taskType + "', '" + volume + "', '"
                 + LDate + "', '" + CDate + "', '"
                 + Proj_ID + "', '" + Empl_ID + "');", sqlCon);
+
                 sqlCon.Open();
                 sqlCom.ExecuteNonQuery();
                 sqlCon.Close();
@@ -226,22 +228,29 @@ namespace kurs2008
                 sqlCom = new SQLiteCommand("SELECT burden "
                 + "FROM Employees "
                 + "WHERE id=" + Empl_ID + ";", sqlCon);
+
                 sqlCon.Open();
                 SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
                 sqlReader.Read();
                 burd = int.Parse(sqlReader["burden"].ToString());
+                sqlCon.Close();
 
                 sqlCom = new SQLiteCommand("SELECT id, speed, complexity "
                + "FROM TaskTypes "
                + "WHERE id=" + taskType.ToString() + ";", sqlCon);
                 int taskDif;
-                SQLiteDataReader sqlRead = sqlCom.ExecuteReader();
-                sqlRead.Read();
-                taskDif = int.Parse(sqlRead["complexity"].ToString());
+
+                sqlCon.Open();
+                sqlReader = sqlCom.ExecuteReader();
+                sqlReader.Read();
+                taskDif = int.Parse(sqlReader["complexity"].ToString());
+                sqlCon.Close();
 
                 sqlCom = new SQLiteCommand("UPDATE Employees "
               + "SET burden = '" + (((taskDif * 100) / FormSalSet.MaxBurden)+ burd) + "' "
               + "WHERE id= " + Empl_ID + ";", sqlCon);
+
+                sqlCon.Open();
                 sqlCom.ExecuteNonQuery();
                 sqlCon.Close();
             }
@@ -407,11 +416,12 @@ namespace kurs2008
             private static int tempID = -1;
             public static int TempID
             { get { return tempID; } }
+            public static string tempName = "";
             public static int tempValue;
-            public static void Add(int Volume)
+            public static void Add(string name, int value)
             {
-                sqlCom = new SQLiteCommand("INSERT INTO WageCalculationVariables(value) "
-                + "VALUES ('" + Volume + "');", sqlCon);
+                sqlCom = new SQLiteCommand("INSERT INTO WageCalculationVariables(name, value) "
+                + "VALUES ('" + name + "', '" + value + "');", sqlCon);
 
                 sqlCon.Open();
                 sqlCom.ExecuteNonQuery();
@@ -428,7 +438,7 @@ namespace kurs2008
             }
             public static void EditStart(int i)
             {
-                sqlCom = new SQLiteCommand("SELECT id, value "
+                sqlCom = new SQLiteCommand("SELECT id, name, value "
                 + "FROM WageCalculationVariables "
                 + "WHERE id=" + i.ToString() + ";", sqlCon);
 
@@ -436,6 +446,7 @@ namespace kurs2008
                 SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
                 sqlReader.Read();
                 tempID = int.Parse(sqlReader["id"].ToString());
+                tempName = sqlReader["name"].ToString();
                 tempValue = int.Parse(sqlReader["value"].ToString());
                 sqlReader.Close();
                 sqlCon.Close();
@@ -443,7 +454,8 @@ namespace kurs2008
             public static void EditConfirm()
             {
                 sqlCom = new SQLiteCommand("UPDATE WageCalculationVariables "
-                + "SET value = " + tempValue + " "
+                + "SET name = " + tempName +" "
+                + "value = " + tempValue + " "
                 + "WHERE id=" + tempID + ";", sqlCon);
 
                 sqlCon.Open();
