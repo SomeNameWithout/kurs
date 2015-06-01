@@ -236,8 +236,8 @@ namespace kurs2008
                 sqlCon.Close();
 
                 sqlCom = new SQLiteCommand("SELECT id, speed, complexity "
-               + "FROM TaskTypes "
-               + "WHERE id=" + taskType.ToString() + ";", sqlCon);
+                + "FROM TaskTypes "
+                + "WHERE id=" + taskType.ToString() + ";", sqlCon);
                 int taskDif;
 
                 sqlCon.Open();
@@ -247,8 +247,8 @@ namespace kurs2008
                 sqlCon.Close();
 
                 sqlCom = new SQLiteCommand("UPDATE Employees "
-              + "SET burden = '" + (((taskDif * 100) / FormSalSet.MaxBurden)+ burd) + "' "
-              + "WHERE id= " + Empl_ID + ";", sqlCon);
+                + "SET burden = '" + (((taskDif * 100) / FormSalSet.MaxBurden)+ burd) + "' "
+                + "WHERE id= " + Empl_ID + ";", sqlCon);
 
                 sqlCon.Open();
                 sqlCom.ExecuteNonQuery();
@@ -312,10 +312,10 @@ namespace kurs2008
             public static int tempEmpl_ID = -1;
             public static string tempDate = "";
             public static int tempVolume = -1;
-            public static void Add(int Empl_ID, string Date, int Volume)
+            public static void Add(int Empl_ID, int Volume)
             {
                 sqlCom = new SQLiteCommand("INSERT INTO Wages(empl_id, date, value) "
-                + "VALUES ('" + Empl_ID + "', '" + Date + "', '" + Volume + "');", sqlCon);
+                + "VALUES ('" + Empl_ID + "', '" + DateTime.Today.ToShortDateString() + "', '" + Volume + "');", sqlCon);
 
                 sqlCon.Open();
                 sqlCom.ExecuteNonQuery();

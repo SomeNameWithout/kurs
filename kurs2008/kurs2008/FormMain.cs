@@ -78,7 +78,7 @@ namespace kurs2008
                             fttype.ShowDialog();
                             break;
                         case "Wages":
-                            DBModule.Wage.Add(1, "30.07.2019", 1000);
+                            DBModule.Wage.Add(1, 1000);
                             break;
                     }
                     if (comboBoxTableChoice.SelectedIndex < MenuGrid.Items.Count)
@@ -139,6 +139,9 @@ namespace kurs2008
                             break;
                         case "Task types":
                             DBModule.TaskType.Delete(int.Parse(dataGridViewMain.CurrentRow.Cells["id"].Value.ToString()));
+                            break;
+                        case "Wages":
+                            DBModule.Wage.Delete(int.Parse(dataGridViewMain.CurrentRow.Cells["id"].Value.ToString()));
                             break;
                     }
                     if (comboBoxTableChoice.SelectedIndex < MenuGrid.Items.Count)
