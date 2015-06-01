@@ -1,77 +1,21 @@
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\kurs2008.exe
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\kurs2008.pdb
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\System.Data.SQLite.dll
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\ResolveAssemblyReference.cache
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.Properties.Resources.resources
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.csproj.GenerateResource.Cache
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.exe
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.pdb
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormMain.resources
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormSearch.resources
-C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.exe
-C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.pdb
-C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\kurs2008\bin\Debug\kurs2008.exe
-C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\kurs2008\bin\Debug\kurs2008.pdb
-C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\kurs2008\bin\Debug\System.Data.SQLite.dll
-C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\kurs2008\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormMain.resources
-C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormSearch.resources
-C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.Properties.Resources.resources
-C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.csproj.GenerateResource.Cache
-C:\Users\Владислав\Desktop\Курсовая работа\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormPost.resources
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormPost.resources
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\ResolveAssemblyReference.cache
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBEmployee.resources
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBProject.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBTask.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBTaskType.resources
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.exe
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.pdb
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\bin\Debug\kurs2008.exe
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\bin\Debug\kurs2008.pdb
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\bin\Debug\System.Data.SQLite.dll
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBEmployee.resources
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBTask.resources
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBTaskType.resources
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormMain.resources
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormPost.resources
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBProject.resources
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormSearch.resources
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.Properties.Resources.resources
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.csproj.GenerateResource.Cache
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\bin\Debug\ZedGraph.dll
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormSPDF.resources
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormECALC.resources
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\bin\Debug\AODL.dll
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\bin\Debug\itextsharp.dll
-C:\Users\Владислав\Desktop\Новая ветка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormSalSet.resources
-<<<<<<< HEAD
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormECALC.resources
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormMain.resources
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormPost.resources
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBProject.resources
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormSalSet.resources
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormSearch.resources
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormSPDF.resources
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.Properties.Resources.resources
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.csproj.GenerateResource.Cache
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\kurs2008.exe
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\kurs2008.pdb
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\AODL.dll
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\itextsharp.dll
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\System.Data.SQLite.dll
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\ZedGraph.dll
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormECALC.resources
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormSalSet.resources
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormSPDF.resources
-=======
->>>>>>> origin/kurs2008/master
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\bin\Debug\kurs2008.exe
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\bin\Debug\kurs2008.pdb
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\bin\Debug\AODL.dll
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\bin\Debug\itextsharp.dll
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\bin\Debug\System.Data.SQLite.dll
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\bin\Debug\ZedGraph.dll
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBEmployee.resources
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBTask.resources
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBTaskType.resources
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormECALC.resources
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormMain.resources
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormPost.resources
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBProject.resources
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormSalSet.resources
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormSearch.resources
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormSPDF.resources
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.Properties.Resources.resources
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.csproj.GenerateResource.Cache
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.exe
-C:\Users\Владислав\Desktop\New\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.pdb

@@ -133,6 +133,7 @@ namespace kurs2008
                 SQLiteDataReader sqlReader = sqlCom.ExecuteReader();
                 sqlReader.Read();
                 tempID = int.Parse(sqlReader["id"].ToString());
+                tempBurden = int.Parse(sqlReader["burden"].ToString());
                 tempName = sqlReader["name"].ToString();
                 sqlReader.Close();
                 sqlCon.Close();
@@ -140,7 +141,8 @@ namespace kurs2008
             public static void EditConfirm()
             {
                 sqlCom = new SQLiteCommand("UPDATE Employees "
-                + "SET name = '" + tempName + "' "
+                + "SET name = '" + tempName + "', "
+                + "burden = '" + tempBurden + "' "
                 + "WHERE id= " + tempID + ";", sqlCon);
 
                 sqlCon.Open();
@@ -224,13 +226,11 @@ namespace kurs2008
                 sqlCom.ExecuteNonQuery();
                 sqlCon.Close();
 
-                DBModule.Employee.EditStart(Empl_ID);
-                int burd = DBModule.Employee.tempBurden;
-
                 DBModule.TaskType.EditStart(taskType_ID);
                 int taskDif = DBModule.TaskType.tempComplexity;
 
-                DBModule.Employee.tempBurden = (taskDif * volume) + burd;
+                DBModule.Employee.EditStart(Empl_ID);
+                DBModule.Employee.tempBurden += (taskDif * volume);
                 DBModule.Employee.EditConfirm();
             }
             public static void Delete(int i)
@@ -298,13 +298,11 @@ namespace kurs2008
                 sqlCom.ExecuteNonQuery();
                 sqlCon.Close();
 
-                DBModule.Employee.EditStart(tempEmpl_ID);
-                int burd = DBModule.Employee.tempBurden;
-
                 DBModule.TaskType.EditStart(tempTaskType_ID);
                 int taskDif = DBModule.TaskType.tempComplexity;
 
-                DBModule.Employee.tempBurden = (taskDif * tempVolume) + burd;
+                DBModule.Employee.EditStart(tempEmpl_ID);
+                DBModule.Employee.tempBurden += (taskDif * tempVolume);
                 DBModule.Employee.EditConfirm();
             }
         }
