@@ -8,6 +8,14 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
+using iTextSharp.text;
+using iTextSharp;
+using iTextSharp.text.pdf;
+using AODL.Document.Content.Tables;
+using AODL.Document.TextDocuments;
+using AODL.Document.Styles;
+using AODL.Document.Content.Text;
+using AODL.Document.SpreadsheetDocuments;
 
 namespace kurs2008
 {
@@ -28,6 +36,7 @@ namespace kurs2008
                 List<string> TablesNames = new List<string>();
                 TablesNames.AddRange(new string[] { "Employees", "Projects", "Tasks", "Task types", "Wages" });
                 comboBoxTableChoice.DataSource = TablesNames;
+               
             }
             catch (Exception ex)
             {
@@ -166,20 +175,69 @@ namespace kurs2008
 
         private void salaryRepToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormSPDF pdf = new FormSPDF();
-            pdf.Show();
+            string name = "1";
+            InputBox.Input("Ввод значения", "Введите значение a:", out name);
+            var doc = new Document();
+            PdfWriter.GetInstance(doc, new FileStream(@"D:\" + name + ".pdf", FileMode.Create));
+            doc.Open();
+
+            doc.Close();
         }
 
         private void efficiencyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormECALC calc = new FormECALC();
-            calc.Show();
+            string name = "1";
+            InputBox.Input("Ввод значения", "Введите значение a:", out name);
+
+            AODL.Document.SpreadsheetDocuments.SpreadsheetDocument spreadsheetDocument = new SpreadsheetDocument();
+            spreadsheetDocument.New();
+            Table table = new Table(spreadsheetDocument, "First", "tablefirst");
+
+            spreadsheetDocument.SaveTo(@"D:\" + name + ".ods");
         }
 
         private void salarySetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormSalSet fss = new FormSalSet();
             fss.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DBModule.WageCalculationVariable.Add("BasicSalary", 15000);
+            DBModule.WageCalculationVariable.Add("BasicPenalty", 500);
+
+            /*DBModule.WageCalculationVariable.EditStart(1);
+            int volume = DBModule.WageCalculationVariable.tempValue;
+            DBModule.WageCalculationVariable.EditStart(2);
+            int temp = DBModule.WageCalculationVariable.tempValue;
+
+            for (int i = 0; i < dataGridViewMain.Rows.Count; i++)
+            {
+                if ((dataGridViewMain.Rows[i].Cells[1].Value != null) && ((Convert.ToString(comboBoxTableChoice.SelectedItem)) == "Employees"))
+                {
+                    int ID = Convert.ToInt32(dataGridViewMain.Rows[i].Cells[0].Value);
+                    
+                    comboBoxTableChoice.SelectedItem = "Tasks";
+                    for (int j = 0; j < dataGridViewMain.Rows.Count; j++)
+                    {
+                        if ((Convert.ToBoolean(dataGridViewMain.Rows[j].Cells[2].Value) == false) && (ID == Convert.ToInt32(dataGridViewMain.Rows[j].Cells[8].Value)))
+                            if(Convert.ToInt32(dataGridViewMain.Rows[j].Cells[5].Value)<Convert.ToInt32(dataGridViewMain.Rows[j].Cells[6].Value))
+                                volume = volume - ((Convert.ToInt32(dataGridViewMain.Rows[j].Cells[6].Value)-Convert.ToInt32(dataGridViewMain.Rows[j].Cells[5].Value))*temp);
+                   
+                    }  
+                    DBModule.Wage.Add(ID, volume);
+                    comboBoxTableChoice.SelectedItem = "Employees";
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Выберите таблицу сотрудников!");
+                    i = dataGridViewMain.Rows.Count;
+                }
+            }
+           */
+
         }
 
     }

@@ -83,12 +83,6 @@
     <Compile Include="FormDBTaskType.Designer.cs">
       <DependentUpon>FormDBTaskType.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormECALC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormECALC.Designer.cs">
-      <DependentUpon>FormECALC.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,11 +113,11 @@
     <Compile Include="FormSearch.Designer.cs">
       <DependentUpon>FormSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSPDF.cs">
+    <Compile Include="InputBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSPDF.Designer.cs">
-      <DependentUpon>FormSPDF.cs</DependentUpon>
+    <Compile Include="InputBox.Designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,9 +129,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDBTaskType.resx">
       <DependentUpon>FormDBTaskType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormECALC.resx">
-      <DependentUpon>FormECALC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -154,8 +145,8 @@
     <EmbeddedResource Include="FormSearch.resx">
       <DependentUpon>FormSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSPDF.resx">
-      <DependentUpon>FormSPDF.cs</DependentUpon>
+    <EmbeddedResource Include="InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

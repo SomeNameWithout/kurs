@@ -11,7 +11,7 @@ namespace kurs2008
 {
     public partial class FormSalSet : Form
     {
-        public static int MaxBurden = 15;
+        //public static int MaxBurden = 15;
         public FormSalSet()
         {
             InitializeComponent();
