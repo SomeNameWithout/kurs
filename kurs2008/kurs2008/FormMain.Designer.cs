@@ -172,6 +172,7 @@
             this.grWorkComplToolStripMenuItem.Name = "grWorkComplToolStripMenuItem";
             this.grWorkComplToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
             this.grWorkComplToolStripMenuItem.Text = "График выполнения работ";
+            this.grWorkComplToolStripMenuItem.Click += new System.EventHandler(this.grWorkComplToolStripMenuItem_Click);
             // 
             // controlPointsToolStripMenuItem
             // 

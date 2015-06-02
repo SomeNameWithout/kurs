@@ -189,11 +189,17 @@ namespace kurs2008
             iTextSharp.text.Font.BOLDITALIC, new BaseColor(Color.Black)));
             iTextSharp.text.Paragraph a1 = new iTextSharp.text.Paragraph(j);
            // string emp_id;
+            a1.Add(Environment.NewLine);
+            a1.Add(new Phrase("ID" + "    DATE " +  "       VALUE  ", new
+            iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 11,
+            iTextSharp.text.Font.NORMAL, new BaseColor(Color.Black))));
+            a1.Alignment = Element.ALIGN_LEFT;
+            a1.SpacingAfter = 5;
             for (int i = 0; i < dataGridViewMain.Rows.Count; i++)
             {
                 //emp_id = Convert.ToString(dataGridViewMain.Rows[i].Cells[2].Value);
                 a1.Add(Environment.NewLine);
-                a1.Add(new Phrase(Convert.ToString(dataGridViewMain.Rows[i].Cells[1].Value)+"  " +Convert.ToString(dataGridViewMain.Rows[i].Cells[2].Value) + "  " + Convert.ToString(dataGridViewMain.Rows[i].Cells[3].Value), new
+                a1.Add(new Phrase(Convert.ToString(dataGridViewMain.Rows[i].Cells[1].Value)+"     " +Convert.ToString(dataGridViewMain.Rows[i].Cells[2].Value) + "      " + Convert.ToString(dataGridViewMain.Rows[i].Cells[3].Value), new
                 iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 11,
                 iTextSharp.text.Font.NORMAL, new BaseColor(Color.Black))));
                 a1.Alignment = Element.ALIGN_LEFT;
@@ -226,7 +232,7 @@ namespace kurs2008
             for (int i = 0; i < dataGridViewMain.Rows.Count; i++)
             {
                 temp_id = Convert.ToInt32(dataGridViewMain.Rows[i].Cells[0].Value);
-                temp_name = Convert.ToString(dataGridViewMain.Rows[i].Cells[0].Value);
+                temp_name = Convert.ToString(dataGridViewMain.Rows[i].Cells[1].Value);
                 comboBoxTableChoice.SelectedItem = "Tasks";
                 for (int j = 0; j < dataGridViewMain.Rows.Count; j++)
                 { 
@@ -239,37 +245,38 @@ namespace kurs2008
                           complited++;
                       }
                   }
-                  if (check == true)
-                  {
-                      eff = (complited * 100) / overall;
-                      //Добавление записи в документ
-                      //Имя
-                      Cell cell0 = table.CreateCell("cell001");
-                      cell0.OfficeValueType = "string";
-                      cell0.CellStyle.CellProperties.Border = Border.NormalSolid;
-                      AODL.Document.Content.Text.Paragraph paragraph1 = ParagraphBuilder.CreateSpreadsheetParagraph(spreadsheetDocument);
-                      paragraph1.TextContent.Add(new SimpleText(spreadsheetDocument, temp_name));
-                      cell0.Content.Add(paragraph1);
-                      table.InsertCellAt(1, 1, cell0);
-                      //Эффективность
-                      Cell cell = table.CreateCell("cell001");
-                      cell.OfficeValueType = "string";
-                      cell.CellStyle.CellProperties.Border = Border.NormalSolid;
-                      AODL.Document.Content.Text.Paragraph paragraph0 = ParagraphBuilder.CreateSpreadsheetParagraph(spreadsheetDocument);
-                      paragraph0.TextContent.Add(new SimpleText(spreadsheetDocument, Convert.ToString(eff) + " %"));
-                      cell.Content.Add(paragraph0);
-                      table.InsertCellAt(1, 2, cell);
-    
-                  }
-                  overall = 0;
-                  complited = 0;
-                  check = false;
                 }
+                if (check == true)
+                {
+                    eff = (complited * 100) / overall;
+                    //Добавление записи в документ
+                    //Имя
+                    Cell cell0 = table.CreateCell("cell001");
+                    cell0.OfficeValueType = "string";
+                    cell0.CellStyle.CellProperties.Border = Border.NormalSolid;
+                    AODL.Document.Content.Text.Paragraph paragraph1 = ParagraphBuilder.CreateSpreadsheetParagraph(spreadsheetDocument);
+                    paragraph1.TextContent.Add(new SimpleText(spreadsheetDocument, temp_name));
+                    cell0.Content.Add(paragraph1);
+                    table.InsertCellAt(1, 1, cell0);
+                    //Эффективность
+                     
+                    Cell cell = table.CreateCell("cell001");
+                    cell.OfficeValueType = "string";
+                    cell.CellStyle.CellProperties.Border = Border.NormalSolid;
+                    AODL.Document.Content.Text.Paragraph paragraph0 = ParagraphBuilder.CreateSpreadsheetParagraph(spreadsheetDocument);
+                    paragraph0.TextContent.Add(new SimpleText(spreadsheetDocument, Convert.ToString(eff) + " %"));
+                    cell.Content.Add(paragraph0);
+                    table.InsertCellAt(1, 2, cell);
+
+                }
+                overall = 0;
+                complited = 0;
+                check = false;
             }
             spreadsheetDocument.TableCollection.Add(table);
             spreadsheetDocument.SaveTo(@"D:\" + name + ".ods");
             System.Diagnostics.Process command = new System.Diagnostics.Process();
-            command.StartInfo.FileName = @"C:\Program Files\C:\Program Files\OpenOffice 4\program\scalc.exe";
+            command.StartInfo.FileName = @"C:\Program Files\OpenOffice 4\program\scalc.exe";
             command.StartInfo.Arguments = @"D:\" + name + ".ods";
             command.Start();
            
@@ -316,6 +323,12 @@ namespace kurs2008
             }
           
 
+        }
+
+        private void grWorkComplToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGrCompl a = new FormGrCompl();
+            a.Show();
         }
 
     }
