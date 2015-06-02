@@ -211,14 +211,67 @@ namespace kurs2008
         private void efficiencyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string name = "1";
-            int complited;
-            int overall;
-            comboBoxTableChoice.SelectedItem = "Tasks";
-            InputBox.Input("Ввод значения", "Введите значение a:", out name);
+            int complited =0;
+            int overall =0;
+            int temp_id;
+            int eff;
+            string temp_name;
+            bool check = false;
+            InputBox.Input("Ввод значения", "Введите значение документа:", out name);
             AODL.Document.SpreadsheetDocuments.SpreadsheetDocument spreadsheetDocument = new SpreadsheetDocument();
             spreadsheetDocument.New();
             Table table = new Table(spreadsheetDocument, "First", "tablefirst");
+            //начало подсчета эффективности
+            comboBoxTableChoice.SelectedItem = "Emploees";
+            for (int i = 0; i < dataGridViewMain.Rows.Count; i++)
+            {
+                temp_id = Convert.ToInt32(dataGridViewMain.Rows[i].Cells[0].Value);
+                temp_name = Convert.ToString(dataGridViewMain.Rows[i].Cells[0].Value);
+                comboBoxTableChoice.SelectedItem = "Tasks";
+                for (int j = 0; j < dataGridViewMain.Rows.Count; j++)
+                { 
+                  if(temp_id == Convert.ToInt32(dataGridViewMain.Rows[j].Cells[8].Value))
+                  {
+                      overall++;
+                      check = true;
+                      if (Convert.ToBoolean(dataGridViewMain.Rows[j].Cells[2].Value) == true)
+                      {
+                          complited++;
+                      }
+                  }
+                  if (check == true)
+                  {
+                      eff = (complited * 100) / overall;
+                      //Добавление записи в документ
+                      //Имя
+                      Cell cell0 = table.CreateCell("cell001");
+                      cell0.OfficeValueType = "string";
+                      cell0.CellStyle.CellProperties.Border = Border.NormalSolid;
+                      AODL.Document.Content.Text.Paragraph paragraph1 = ParagraphBuilder.CreateSpreadsheetParagraph(spreadsheetDocument);
+                      paragraph1.TextContent.Add(new SimpleText(spreadsheetDocument, temp_name));
+                      cell0.Content.Add(paragraph1);
+                      table.InsertCellAt(1, 1, cell0);
+                      //Эффективность
+                      Cell cell = table.CreateCell("cell001");
+                      cell.OfficeValueType = "string";
+                      cell.CellStyle.CellProperties.Border = Border.NormalSolid;
+                      AODL.Document.Content.Text.Paragraph paragraph0 = ParagraphBuilder.CreateSpreadsheetParagraph(spreadsheetDocument);
+                      paragraph0.TextContent.Add(new SimpleText(spreadsheetDocument, Convert.ToString(eff) + " %"));
+                      cell.Content.Add(paragraph0);
+                      table.InsertCellAt(1, 2, cell);
+    
+                  }
+                  overall = 0;
+                  complited = 0;
+                  check = false;
+                }
+            }
+            spreadsheetDocument.TableCollection.Add(table);
             spreadsheetDocument.SaveTo(@"D:\" + name + ".ods");
+            System.Diagnostics.Process command = new System.Diagnostics.Process();
+            command.StartInfo.FileName = @"C:\Program Files\C:\Program Files\OpenOffice 4\program\scalc.exe";
+            command.StartInfo.Arguments = @"D:\" + name + ".ods";
+            command.Start();
            
         }
 
