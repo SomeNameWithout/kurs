@@ -16,6 +16,8 @@ using AODL.Document.TextDocuments;
 using AODL.Document.Styles;
 using AODL.Document.Content.Text;
 using AODL.Document.SpreadsheetDocuments;
+using System.Diagnostics;
+
 
 namespace kurs2008
 {
@@ -176,15 +178,34 @@ namespace kurs2008
         private void salaryRepToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string name = "1";
-            if (Convert.ToString(comboBoxTableChoice.SelectedItem) == "Wages")
+            comboBoxTableChoice.SelectedItem = "Wages";
+            InputBox.Input("Ввод значения", "Введите название документа:", out name);
+            var doc = new Document();
+            PdfWriter.GetInstance(doc, new FileStream(@"D:\" + name + ".pdf", FileMode.OpenOrCreate));
+            doc.Open();
+
+            iTextSharp.text.Phrase j = new Phrase("Salary report", new
+            iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.COURIER, 11,
+            iTextSharp.text.Font.BOLDITALIC, new BaseColor(Color.Black)));
+            iTextSharp.text.Paragraph a1 = new iTextSharp.text.Paragraph(j);
+           // string emp_id;
+            for (int i = 0; i < dataGridViewMain.Rows.Count; i++)
             {
-                InputBox.Input("Ввод значения", "Введите значение a:", out name);
-                var doc = new Document();
-                PdfWriter.GetInstance(doc, new FileStream(@"D:\" + name + ".pdf", FileMode.Create));
-                doc.Open();
-                doc.Close();
+                //emp_id = Convert.ToString(dataGridViewMain.Rows[i].Cells[2].Value);
+                a1.Add(Environment.NewLine);
+                a1.Add(new Phrase(Convert.ToString(dataGridViewMain.Rows[i].Cells[1].Value)+"  " +Convert.ToString(dataGridViewMain.Rows[i].Cells[2].Value) + "  " + Convert.ToString(dataGridViewMain.Rows[i].Cells[3].Value), new
+                iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 11,
+                iTextSharp.text.Font.NORMAL, new BaseColor(Color.Black))));
+                a1.Alignment = Element.ALIGN_LEFT;
+                a1.SpacingAfter = 5;
             }
-            else MessageBox.Show("Выберите таблицу зарплат!");
+            doc.Add(a1);
+            doc.Close();
+            System.Diagnostics.Process command = new System.Diagnostics.Process();
+            command.StartInfo.FileName = @"C:\Program Files\Adobe\Reader 10.0\Reader\AcroRd32.exe";
+            command.StartInfo.Arguments = @"D:\" + name + ".pdf";
+            command.Start();
+           
         }
 
         private void efficiencyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -192,15 +213,13 @@ namespace kurs2008
             string name = "1";
             int complited;
             int overall;
-            if (Convert.ToString(comboBoxTableChoice.SelectedItem) == "Tasks")
-            {
-                InputBox.Input("Ввод значения", "Введите значение a:", out name);
-                AODL.Document.SpreadsheetDocuments.SpreadsheetDocument spreadsheetDocument = new SpreadsheetDocument();
-                spreadsheetDocument.New();
-                Table table = new Table(spreadsheetDocument, "First", "tablefirst");
-                spreadsheetDocument.SaveTo(@"D:\" + name + ".ods");
-            }
-            else MessageBox.Show("Выберите таблицу задач!");
+            comboBoxTableChoice.SelectedItem = "Tasks";
+            InputBox.Input("Ввод значения", "Введите значение a:", out name);
+            AODL.Document.SpreadsheetDocuments.SpreadsheetDocument spreadsheetDocument = new SpreadsheetDocument();
+            spreadsheetDocument.New();
+            Table table = new Table(spreadsheetDocument, "First", "tablefirst");
+            spreadsheetDocument.SaveTo(@"D:\" + name + ".ods");
+           
         }
 
         private void salarySetToolStripMenuItem_Click(object sender, EventArgs e)
