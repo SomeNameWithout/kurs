@@ -4,13 +4,11 @@ D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBEmployee.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBTask.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBTaskType.resources
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormECALC.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormMain.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormPost.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormDBProject.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormSalSet.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormSearch.resources
-D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.FormSPDF.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.Properties.Resources.resources
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.csproj.GenerateResource.Cache
 D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\kurs2008.exe
@@ -40,3 +38,5 @@ C:\Users\Владислав\Desktop\Новая папка\kurs\kurs2008\kurs2008
 C:\Users\Владислав\Desktop\Новая папка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.pdb
 C:\Users\Владислав\Desktop\Новая папка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.InputBox.resources
 C:\Users\Владислав\Desktop\Новая папка\kurs\kurs2008\kurs2008\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\УлГТУ\УлГТУ 2г2с\ООП\Курсач\КОД\kurs2008\kurs2008\obj\Debug\kurs2008.InputBox.resources
