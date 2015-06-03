@@ -172,7 +172,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "FormPost";
-            this.Text = "FormPost";
+            this.Text = "Отправка почты";
             this.ResumeLayout(false);
             this.PerformLayout();
 

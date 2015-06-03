@@ -102,6 +102,7 @@
             this.buttonSearch.TabIndex = 1;
             this.buttonSearch.Text = "Поиск и фильтрация";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Visible = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // comboBoxTableChoice
@@ -171,7 +172,7 @@
             // 
             this.grWorkComplToolStripMenuItem.Name = "grWorkComplToolStripMenuItem";
             this.grWorkComplToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
-            this.grWorkComplToolStripMenuItem.Text = "График выполнения работ";
+            this.grWorkComplToolStripMenuItem.Text = "График готовности проектов";
             this.grWorkComplToolStripMenuItem.Click += new System.EventHandler(this.grWorkComplToolStripMenuItem_Click);
             // 
             // controlPointsToolStripMenuItem
@@ -179,6 +180,7 @@
             this.controlPointsToolStripMenuItem.Name = "controlPointsToolStripMenuItem";
             this.controlPointsToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
             this.controlPointsToolStripMenuItem.Text = "Работа с контрольными точками";
+            this.controlPointsToolStripMenuItem.Click += new System.EventHandler(this.controlPointsToolStripMenuItem_Click);
             // 
             // AnToolStripMenuItem
             // 
@@ -212,9 +214,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(195, 371);
+            this.button1.Location = new System.Drawing.Point(162, 371);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
+            this.button1.Size = new System.Drawing.Size(146, 23);
             this.button1.TabIndex = 5;
             this.button1.Text = "Рассчитать зарплату";
             this.button1.UseVisualStyleBackColor = true;
@@ -225,15 +227,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 485);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBoxTableChoice);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.dataGridViewMain);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
-            this.Text = "Form1";
+            this.Text = "Главное меню";
             this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
             this.MenuGrid.ResumeLayout(false);

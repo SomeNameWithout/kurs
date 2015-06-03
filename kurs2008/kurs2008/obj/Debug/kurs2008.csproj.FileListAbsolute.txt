@@ -40,3 +40,5 @@ C:\Users\Владислав\Desktop\Новая папка\kurs\kurs2008\kurs2008
 C:\Users\Владислав\Desktop\Новая папка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.pdb
 C:\Users\Владислав\Desktop\Новая папка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.InputBox.resources
 C:\Users\Владислав\Desktop\Новая папка\kurs\kurs2008\kurs2008\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Владислав\Desktop\Новая папка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormGrCompl.resources
+C:\Users\Владислав\Desktop\Новая папка\kurs\kurs2008\kurs2008\obj\Debug\kurs2008.FormPoint.resources

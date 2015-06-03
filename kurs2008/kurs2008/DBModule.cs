@@ -93,7 +93,6 @@ namespace kurs2008
             DataTable dt = new DataTable();
             dt.Load(sdr);
             sdr.Close();
-
             sqlCon.Close();
             return dt;
         }

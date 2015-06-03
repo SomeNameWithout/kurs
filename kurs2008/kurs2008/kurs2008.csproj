@@ -99,6 +99,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPoint.Designer.cs">
+      <DependentUpon>FormPoint.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPost.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,8 +146,14 @@
     <EmbeddedResource Include="FormDBTaskType.resx">
       <DependentUpon>FormDBTaskType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGrCompl.resx">
+      <DependentUpon>FormGrCompl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPoint.resx">
+      <DependentUpon>FormPoint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPost.resx">
       <DependentUpon>FormPost.cs</DependentUpon>

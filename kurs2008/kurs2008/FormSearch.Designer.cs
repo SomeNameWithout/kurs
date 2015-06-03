@@ -109,7 +109,7 @@
             this.Controls.Add(this.textBoxColumnValue);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormSearch";
-            this.Text = "FormSearch";
+            this.Text = "Поиск и фильтрация";
             this.Load += new System.EventHandler(this.FormSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

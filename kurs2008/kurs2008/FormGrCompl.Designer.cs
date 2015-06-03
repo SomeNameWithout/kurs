@@ -28,11 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.ZG = new ZedGraph.ZedGraphControl();
+            this.SuspendLayout();
+            // 
+            // ZG
+            // 
+            this.ZG.IsShowPointValues = false;
+            this.ZG.Location = new System.Drawing.Point(33, 12);
+            this.ZG.Name = "ZG";
+            this.ZG.PointValueFormat = "G";
+            this.ZG.Size = new System.Drawing.Size(560, 299);
+            this.ZG.TabIndex = 1;
+            // 
+            // FormGrCompl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "FormGrCompl";
+            this.ClientSize = new System.Drawing.Size(640, 369);
+            this.Controls.Add(this.ZG);
+            this.Name = "FormGrCompl";
+            this.Text = "Завершенность проектов";
+            this.Load += new System.EventHandler(this.FormGrCompl_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private ZedGraph.ZedGraphControl ZG;
     }
 }
