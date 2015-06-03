@@ -58,7 +58,7 @@
             // 
             // textBoxColumnValue
             // 
-            this.textBoxColumnValue.Location = new System.Drawing.Point(420, 41);
+            this.textBoxColumnValue.Location = new System.Drawing.Point(203, 86);
             this.textBoxColumnValue.Name = "textBoxColumnValue";
             this.textBoxColumnValue.Size = new System.Drawing.Size(100, 20);
             this.textBoxColumnValue.TabIndex = 0;
@@ -85,7 +85,7 @@
             // comboBoxColumnChoice
             // 
             this.comboBoxColumnChoice.FormattingEnabled = true;
-            this.comboBoxColumnChoice.Location = new System.Drawing.Point(232, 41);
+            this.comboBoxColumnChoice.Location = new System.Drawing.Point(15, 86);
             this.comboBoxColumnChoice.Name = "comboBoxColumnChoice";
             this.comboBoxColumnChoice.Size = new System.Drawing.Size(121, 21);
             this.comboBoxColumnChoice.TabIndex = 3;
@@ -94,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(229, 14);
+            this.label2.Location = new System.Drawing.Point(12, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 4;
@@ -103,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(366, 14);
+            this.label3.Location = new System.Drawing.Point(149, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 5;
@@ -116,7 +116,8 @@
             this.редактироватьToolStripMenuItem,
             this.удалитьToolStripMenuItem});
             this.MenuGrid.Name = "MenuGrid";
-            this.MenuGrid.Size = new System.Drawing.Size(155, 70);
+            this.MenuGrid.Size = new System.Drawing.Size(155, 92);
+            this.MenuGrid.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuGrid_ItemClicked);
             // 
             // добавитьToolStripMenuItem
             // 
@@ -139,7 +140,7 @@
             // comboBoxOperationType
             // 
             this.comboBoxOperationType.FormattingEnabled = true;
-            this.comboBoxOperationType.Location = new System.Drawing.Point(369, 41);
+            this.comboBoxOperationType.Location = new System.Drawing.Point(152, 86);
             this.comboBoxOperationType.Name = "comboBoxOperationType";
             this.comboBoxOperationType.Size = new System.Drawing.Size(45, 21);
             this.comboBoxOperationType.TabIndex = 7;
@@ -150,13 +151,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 449);
-            this.Controls.Add(this.label2);
+            this.ContextMenuStrip = this.MenuGrid;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxOperationType);
-            this.Controls.Add(this.comboBoxColumnChoice);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxTableChoice);
             this.Controls.Add(this.dataGridViewSearch);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBoxColumnChoice);
             this.Controls.Add(this.textBoxColumnValue);
             this.Name = "FormSearch";
             this.Text = "Поиск и фильтрация";
