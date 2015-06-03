@@ -102,7 +102,6 @@
             this.buttonSearch.TabIndex = 1;
             this.buttonSearch.Text = "Поиск и фильтрация";
             this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Visible = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // comboBoxTableChoice
