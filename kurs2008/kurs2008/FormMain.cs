@@ -88,9 +88,6 @@ namespace kurs2008
                             FormDBTaskType fttype = new FormDBTaskType();
                             fttype.ShowDialog();
                             break;
-                        case "Wages":
-                            DBModule.Wage.Add(1, 1000);
-                            break;
                     }
                     if (comboBoxTableChoice.SelectedIndex < MenuGrid.Items.Count)
                     {

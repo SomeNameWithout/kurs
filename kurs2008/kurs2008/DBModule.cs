@@ -11,7 +11,6 @@ namespace kurs2008
     class DBModule
     {
         public static SQLiteConnection sqlCon;
-       // FormSalSet z = new FormSalSet();
         static SQLiteCommand sqlCom;
         public DBModule()
         {
